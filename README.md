@@ -10,11 +10,11 @@
 
 **Frontend (TypeScript + JavaScript + CSS + HTML)** – Handles everything the user sees and interacts with — fast, safe, and stylish.
 
-**Backend (Python)** – Does the heavy lifting — secure, scalable, and perfect for data-heavy tasks.
+**Backend (Python-Django)** – Does the heavy lifting — secure, scalable, and perfect for data-heavy tasks.
 
 💡 *It’s a modern full-stack approach:*  
 - **TypeScript** = Stability in frontend code  
-- **Python** = Flexibility and speed in backend processing  
+- **Python-django** = Flexibility and speed in backend processing  
 
 ---
 
