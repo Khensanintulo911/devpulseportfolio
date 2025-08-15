@@ -26,6 +26,18 @@ export default function AboutSection() {
             
             <div className="space-y-6">
               <div className="prose prose-lg">
+                <div className="bg-white p-6 rounded-xl border border-gray-200 mb-6">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <div className="w-8 h-8 bg-gray-700 rounded-lg flex items-center justify-center mr-3">
+                      <span className="text-white font-bold text-sm">DP</span>
+                    </div>
+                    About Dev Pulse
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Dev Pulse is more than just a portfolio - it's my way of showcasing my work and representing myself as something beyond just the name "Khensani". This brand represents my unique approach to technology, combining traditional engineering thinking with modern software development. It's a platform where I can demonstrate my journey, skills, and the innovative solutions I create.
+                  </p>
+                </div>
+                
                 <p className="text-slate-600 leading-relaxed">
                   {profile?.bio || "I'm the founder of Dev Pulse - a technology brand focused on building innovative solutions that bridge engineering and software development. My journey from Mining Engineering at Wits University to full-stack development represents the evolution of traditional engineering into the digital age."}
                 </p>
