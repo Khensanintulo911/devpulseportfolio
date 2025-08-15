@@ -7,7 +7,7 @@ export default function ProjectsSection() {
       image: "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
       category: "Civic Tech",
       categoryColor: "bg-red-500",
-      technologies: ["React", "Node.js", "MongoDB", "Express"],
+      technologies: ["Django", "HTML", "CSS", "JavaScript", "SQL"],
       githubUrl: "https://github.com/Khensanintulo911/votesphereSA",
       gradient: "from-red-500 to-orange-500"
     },
@@ -18,7 +18,7 @@ export default function ProjectsSection() {
       image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
       category: "Business Solutions",
       categoryColor: "bg-green-500",
-      technologies: ["React", "Express", "PostgreSQL", "Charts.js"],
+      technologies: ["Django", "HTML", "CSS", "JavaScript", "SQL"],
       githubUrl: "https://github.com/Khensanintulo911/stockifysa",
       gradient: "from-green-500 to-emerald-500"
     },
@@ -29,17 +29,17 @@ export default function ProjectsSection() {
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
       category: "EdTech",
       categoryColor: "bg-purple-500",
-      technologies: ["Vue.js", "Django", "MySQL", "Python"],
+      technologies: ["Django", "HTML", "CSS", "JavaScript", "SQL"],
       githubUrl: "https://github.com/Khensanintulo911/Klasora",
       gradient: "from-purple-500 to-indigo-500"
     }
   ];
 
   return (
-    <section id="projects" className="py-16 bg-gradient-to-br from-purple-50 via-blue-50 to-cyan-50">
+    <section id="projects" className="py-16 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center bg-gradient-to-r from-purple-600 to-cyan-600 bg-clip-text text-transparent mb-4">Dev Pulse Solutions</h2>
+          <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">Dev Pulse Solutions</h2>
           <p className="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
             Explore our portfolio of innovative applications that demonstrate how engineering thinking and software development can create comprehensive solutions across civic engagement, business management, and education.
           </p>
@@ -48,24 +48,19 @@ export default function ProjectsSection() {
             {projects.map((project) => (
               <div 
                 key={project.id}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 group border border-slate-100"
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-200"
               >
-                <div className={`relative h-48 bg-gradient-to-br ${project.gradient} overflow-hidden`}>
+                <div className={`relative h-48 bg-gradient-to-br ${project.gradient}`}>
                   <img 
                     src={project.image}
                     alt={`${project.title} interface`}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                    className="w-full h-full object-cover" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   <div className="absolute top-4 right-4">
-                    <span className={`${project.categoryColor} text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg animate-pulse`}>
+                    <span className="bg-gray-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                       {project.category}
                     </span>
-                  </div>
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <div className="w-8 h-8 bg-white/20 rounded-lg backdrop-blur-sm flex items-center justify-center">
-                      <i className="fab fa-github text-sm"></i>
-                    </div>
                   </div>
                 </div>
                 
@@ -76,11 +71,10 @@ export default function ProjectsSection() {
                   </p>
                   
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech, index) => (
+                    {project.technologies.map((tech) => (
                       <span 
                         key={tech}
-                        className="bg-gradient-to-r from-blue-100 to-purple-100 text-slate-700 px-3 py-1 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
-                        style={{animationDelay: `${index * 0.1}s`}}
+                        className="bg-gray-200 text-gray-700 px-3 py-1 rounded-lg text-sm font-medium"
                       >
                         {tech}
                       </span>
@@ -92,12 +86,12 @@ export default function ProjectsSection() {
                       href={project.githubUrl}
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center text-dev-blue hover:text-blue-700 font-medium"
+                      className="flex items-center text-gray-600 hover:text-gray-800 font-medium"
                     >
                       <i className="fab fa-github mr-2"></i>
                       View Code
                     </a>
-                    <button className="bg-dev-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm">
+                    <button className="bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors text-sm">
                       Live Demo
                     </button>
                   </div>
@@ -111,7 +105,7 @@ export default function ProjectsSection() {
               href="https://github.com/Khensanintulo911"
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center bg-dev-slate text-white px-8 py-3 rounded-xl font-semibold hover:bg-slate-700 transition-colors"
+              className="inline-flex items-center bg-gray-800 text-white px-8 py-3 rounded-xl font-semibold hover:bg-gray-900 transition-colors"
             >
               <i className="fab fa-github mr-3"></i>
               View All Projects on GitHub

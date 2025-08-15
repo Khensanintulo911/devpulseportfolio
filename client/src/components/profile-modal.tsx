@@ -79,7 +79,7 @@ export default function ProfileModal({ isOpen, onClose }: ProfileModalProps) {
         <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
           <div className="p-6 border-b border-slate-200">
             <div className="flex items-center justify-between">
-              <h3 className="text-2xl font-semibold text-dev-slate">Update Dev Pulse Profile</h3>
+              <h3 className="text-2xl font-semibold text-gray-800">Update Dev Pulse Profile</h3>
               <button 
                 onClick={onClose}
                 className="text-slate-400 hover:text-slate-600"
@@ -97,7 +97,7 @@ export default function ProfileModal({ isOpen, onClose }: ProfileModalProps) {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">Full Name</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
                   <input 
                     type="text" 
                     name="name"
@@ -105,12 +105,12 @@ export default function ProfileModal({ isOpen, onClose }: ProfileModalProps) {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-dev-blue focus:ring-2 focus:ring-dev-blue/20 outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gray-600 focus:ring-2 focus:ring-gray-200 outline-none transition-colors"
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">Bio</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Bio</label>
                   <textarea 
                     rows={4} 
                     name="bio"
@@ -123,51 +123,51 @@ export default function ProfileModal({ isOpen, onClose }: ProfileModalProps) {
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">Location</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Location</label>
                   <input 
                     type="text" 
                     name="location"
                     placeholder="City, Province, Postal Code" 
                     value={formData.location}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-dev-blue focus:ring-2 focus:ring-dev-blue/20 outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gray-600 focus:ring-2 focus:ring-gray-200 outline-none transition-colors"
                   />
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">LinkedIn URL</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">LinkedIn URL</label>
                     <input 
                       type="url" 
                       name="linkedinUrl"
                       placeholder="https://linkedin.com/in/..." 
                       value={formData.linkedinUrl}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-dev-blue focus:ring-2 focus:ring-dev-blue/20 outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gray-600 focus:ring-2 focus:ring-gray-200 outline-none transition-colors"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-2">WhatsApp Number</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">WhatsApp Number</label>
                     <input 
                       type="tel" 
                       name="whatsappNumber"
                       placeholder="+27 XX XXX XXXX" 
                       value={formData.whatsappNumber}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-dev-blue focus:ring-2 focus:ring-dev-blue/20 outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gray-600 focus:ring-2 focus:ring-gray-200 outline-none transition-colors"
                     />
                   </div>
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">Phone Number</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
                   <input 
                     type="tel" 
                     name="phoneNumber"
                     placeholder="+27 XX XXX XXXX" 
                     value={formData.phoneNumber}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-dev-blue focus:ring-2 focus:ring-dev-blue/20 outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gray-600 focus:ring-2 focus:ring-gray-200 outline-none transition-colors"
                   />
                 </div>
                 
@@ -175,14 +175,14 @@ export default function ProfileModal({ isOpen, onClose }: ProfileModalProps) {
                   <button 
                     type="button" 
                     onClick={onClose}
-                    className="px-6 py-3 border border-slate-200 text-slate-700 rounded-xl hover:bg-slate-50 transition-colors"
+                    className="px-6 py-3 border border-gray-200 text-gray-700 rounded-xl hover:bg-gray-50 transition-colors"
                   >
                     Cancel
                   </button>
                   <button 
                     type="submit"
                     disabled={updateProfileMutation.isPending}
-                    className="px-6 py-3 bg-dev-blue text-white rounded-xl hover:bg-blue-700 transition-colors disabled:opacity-50"
+                    className="px-6 py-3 bg-gray-700 text-white rounded-xl hover:bg-gray-800 transition-colors disabled:opacity-50"
                   >
                     {updateProfileMutation.isPending ? 'Saving...' : 'Save Changes'}
                   </button>

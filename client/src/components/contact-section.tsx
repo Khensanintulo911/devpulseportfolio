@@ -46,32 +46,32 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-16 bg-gradient-to-br from-cyan-50 via-blue-50 to-white">
+    <section id="contact" className="py-16 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent mb-4">Connect with Dev Pulse</h2>
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">Connect with Dev Pulse</h2>
           <p className="text-slate-600 mb-6 max-w-2xl mx-auto">
             Ready to collaborate on innovative solutions? Whether you're looking for engineering-focused software development, technical consulting, or want to discuss how traditional engineering can evolve through technology, I'm excited to connect.
           </p>
-          <div className="bg-gradient-to-r from-green-50 to-blue-50 p-4 rounded-2xl mb-12 max-w-2xl mx-auto">
+          <div className="bg-gray-100 p-4 rounded-2xl mb-12 max-w-2xl mx-auto">
             <div className="flex items-center justify-center space-x-6">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
                   <i className="fas fa-laptop text-white text-sm"></i>
                 </div>
-                <span className="text-green-700 font-medium">Remote Ready</span>
+                <span className="text-gray-700 font-medium">Remote Ready</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
                   <i className="fas fa-building text-white text-sm"></i>
                 </div>
-                <span className="text-blue-700 font-medium">On-site Available</span>
+                <span className="text-gray-700 font-medium">On-site Available</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
                   <i className="fas fa-search text-white text-sm"></i>
                 </div>
-                <span className="text-purple-700 font-medium">Job Seeking</span>
+                <span className="text-gray-700 font-medium">Job Seeking</span>
               </div>
             </div>
           </div>
@@ -81,37 +81,37 @@ export default function ContactSection() {
               href={formatContactLink('linkedin', profile?.linkedinUrl)}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-slate-50 p-8 rounded-2xl hover:bg-blue-50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              className="bg-gray-100 p-8 rounded-2xl hover:bg-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-gray-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <i className="fab fa-linkedin-in text-white text-2xl"></i>
               </div>
-              <h3 className="font-semibold text-lg text-dev-slate mb-2">LinkedIn</h3>
-              <p className="text-slate-600">Professional networking</p>
+              <h3 className="font-semibold text-lg text-gray-800 mb-2">LinkedIn</h3>
+              <p className="text-gray-600">Professional networking</p>
             </a>
 
             <a 
               href={formatContactLink('whatsapp', profile?.whatsappNumber)}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-slate-50 p-8 rounded-2xl hover:bg-green-50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              className="bg-gray-100 p-8 rounded-2xl hover:bg-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="w-16 h-16 bg-green-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-gray-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <i className="fab fa-whatsapp text-white text-2xl"></i>
               </div>
-              <h3 className="font-semibold text-lg text-dev-slate mb-2">WhatsApp</h3>
-              <p className="text-slate-600">Quick messaging</p>
+              <h3 className="font-semibold text-lg text-gray-800 mb-2">WhatsApp</h3>
+              <p className="text-gray-600">Quick messaging</p>
             </a>
 
             <a 
               href={formatContactLink('phone', profile?.phoneNumber)}
-              className="group bg-slate-50 p-8 rounded-2xl hover:bg-dev-cyan/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              className="bg-gray-100 p-8 rounded-2xl hover:bg-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="w-16 h-16 bg-dev-cyan rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-gray-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <i className="fas fa-phone text-white text-2xl"></i>
               </div>
-              <h3 className="font-semibold text-lg text-dev-slate mb-2">Phone Call</h3>
-              <p className="text-slate-600">Direct conversation</p>
+              <h3 className="font-semibold text-lg text-gray-800 mb-2">Phone Call</h3>
+              <p className="text-gray-600">Direct conversation</p>
             </a>
           </div>
 
@@ -158,7 +158,7 @@ export default function ContactSection() {
               />
               <button 
                 type="submit"
-                className="w-full bg-dev-blue text-white py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors"
+                className="w-full bg-gray-700 text-white py-3 rounded-xl font-semibold hover:bg-gray-800 transition-colors"
               >
                 Send Message
               </button>
