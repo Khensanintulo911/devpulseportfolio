@@ -20,7 +20,8 @@ export class MemStorage implements IStorage {
     this.profile = {
       id: randomUUID(),
       name: "Khensani Daniel Ntulo",
-      bio: "I'm the founder of Dev Pulse - a technology brand focused on building innovative solutions that bridge engineering and software development. My journey from Mining Engineering at Wits University to full-stack development represents the evolution of traditional engineering into the digital age. Currently completing the HyperionDev Graduate Program, I specialize in creating comprehensive applications that solve real-world problems across political engagement, business management, and educational platforms.",
+      bio: "I'm the founder of Dev Pulse - a technology brand focused on building innovative solutions that bridge engineering and software development. My journey from Mining Engineering at Wits University to full-stack development represents the evolution of traditional engineering into the digital age. Currently completing the HyperionDev Graduate Program and actively seeking opportunities to apply my skills in real-world projects.",
+      location: "Gauteng, Alberton 1458",
       linkedinUrl: null,
       whatsappNumber: null,
       phoneNumber: null,
@@ -54,6 +55,7 @@ export class MemStorage implements IStorage {
       id,
       name: insertProfile.name,
       bio: insertProfile.bio,
+      location: insertProfile.location || null,
       linkedinUrl: insertProfile.linkedinUrl || null,
       whatsappNumber: insertProfile.whatsappNumber || null,
       phoneNumber: insertProfile.phoneNumber || null

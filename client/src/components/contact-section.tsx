@@ -46,13 +46,35 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-16 bg-white">
+    <section id="contact" className="py-16 bg-gradient-to-br from-cyan-50 via-blue-50 to-white">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-dev-slate mb-4">Connect with Dev Pulse</h2>
-          <p className="text-slate-600 mb-12 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent mb-4">Connect with Dev Pulse</h2>
+          <p className="text-slate-600 mb-6 max-w-2xl mx-auto">
             Ready to collaborate on innovative solutions? Whether you're looking for engineering-focused software development, technical consulting, or want to discuss how traditional engineering can evolve through technology, I'm excited to connect.
           </p>
+          <div className="bg-gradient-to-r from-green-50 to-blue-50 p-4 rounded-2xl mb-12 max-w-2xl mx-auto">
+            <div className="flex items-center justify-center space-x-6">
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                  <i className="fas fa-laptop text-white text-sm"></i>
+                </div>
+                <span className="text-green-700 font-medium">Remote Ready</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                  <i className="fas fa-building text-white text-sm"></i>
+                </div>
+                <span className="text-blue-700 font-medium">On-site Available</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
+                  <i className="fas fa-search text-white text-sm"></i>
+                </div>
+                <span className="text-purple-700 font-medium">Job Seeking</span>
+              </div>
+            </div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <a 

@@ -36,10 +36,10 @@ export default function ProjectsSection() {
   ];
 
   return (
-    <section id="projects" className="py-16 bg-slate-50">
+    <section id="projects" className="py-16 bg-gradient-to-br from-purple-50 via-blue-50 to-cyan-50">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-dev-slate mb-4">Dev Pulse Solutions</h2>
+          <h2 className="text-4xl font-bold text-center bg-gradient-to-r from-purple-600 to-cyan-600 bg-clip-text text-transparent mb-4">Dev Pulse Solutions</h2>
           <p className="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
             Explore our portfolio of innovative applications that demonstrate how engineering thinking and software development can create comprehensive solutions across civic engagement, business management, and education.
           </p>
@@ -48,19 +48,24 @@ export default function ProjectsSection() {
             {projects.map((project) => (
               <div 
                 key={project.id}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 group border border-slate-100"
               >
-                <div className={`relative h-48 bg-gradient-to-br ${project.gradient}`}>
+                <div className={`relative h-48 bg-gradient-to-br ${project.gradient} overflow-hidden`}>
                   <img 
                     src={project.image}
                     alt={`${project.title} interface`}
-                    className="w-full h-full object-cover" 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                   <div className="absolute top-4 right-4">
-                    <span className={`${project.categoryColor} text-white px-3 py-1 rounded-full text-sm font-medium`}>
+                    <span className={`${project.categoryColor} text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg animate-pulse`}>
                       {project.category}
                     </span>
+                  </div>
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <div className="w-8 h-8 bg-white/20 rounded-lg backdrop-blur-sm flex items-center justify-center">
+                      <i className="fab fa-github text-sm"></i>
+                    </div>
                   </div>
                 </div>
                 
@@ -71,10 +76,11 @@ export default function ProjectsSection() {
                   </p>
                   
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech) => (
+                    {project.technologies.map((tech, index) => (
                       <span 
                         key={tech}
-                        className="bg-slate-100 text-slate-600 px-3 py-1 rounded-lg text-sm"
+                        className="bg-gradient-to-r from-blue-100 to-purple-100 text-slate-700 px-3 py-1 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
+                        style={{animationDelay: `${index * 0.1}s`}}
                       >
                         {tech}
                       </span>

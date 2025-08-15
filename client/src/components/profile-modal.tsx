@@ -14,6 +14,7 @@ export default function ProfileModal({ isOpen, onClose }: ProfileModalProps) {
   const [formData, setFormData] = useState({
     name: '',
     bio: '',
+    location: '',
     linkedinUrl: '',
     whatsappNumber: '',
     phoneNumber: ''
@@ -50,6 +51,7 @@ export default function ProfileModal({ isOpen, onClose }: ProfileModalProps) {
       setFormData({
         name: profile.name || '',
         bio: profile.bio || '',
+        location: profile.location || '',
         linkedinUrl: profile.linkedinUrl || '',
         whatsappNumber: profile.whatsappNumber || '',
         phoneNumber: profile.phoneNumber || ''
@@ -117,6 +119,18 @@ export default function ProfileModal({ isOpen, onClose }: ProfileModalProps) {
                     onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-dev-blue focus:ring-2 focus:ring-dev-blue/20 outline-none transition-colors resize-none"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">Location</label>
+                  <input 
+                    type="text" 
+                    name="location"
+                    placeholder="City, Province, Postal Code" 
+                    value={formData.location}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-dev-blue focus:ring-2 focus:ring-dev-blue/20 outline-none transition-colors"
                   />
                 </div>
                 

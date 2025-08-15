@@ -11,7 +11,7 @@ export default function Home() {
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
 
   return (
-    <div className="font-inter bg-slate-50 text-slate-700">
+    <div className="font-inter bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 text-slate-700 min-h-screen">
       <Navigation onEditProfile={() => setIsProfileModalOpen(true)} />
       <HeroSection />
       <AboutSection />

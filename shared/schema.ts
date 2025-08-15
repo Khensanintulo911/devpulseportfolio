@@ -13,6 +13,7 @@ export const profiles = pgTable("profiles", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   name: text("name").notNull(),
   bio: text("bio").notNull(),
+  location: text("location"),
   linkedinUrl: text("linkedin_url"),
   whatsappNumber: text("whatsapp_number"),
   phoneNumber: text("phone_number"),
