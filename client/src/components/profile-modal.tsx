@@ -77,7 +77,7 @@ export default function ProfileModal({ isOpen, onClose }: ProfileModalProps) {
         <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
           <div className="p-6 border-b border-slate-200">
             <div className="flex items-center justify-between">
-              <h3 className="text-2xl font-semibold text-dev-slate">Edit Profile</h3>
+              <h3 className="text-2xl font-semibold text-dev-slate">Update Dev Pulse Profile</h3>
               <button 
                 onClick={onClose}
                 className="text-slate-400 hover:text-slate-600"

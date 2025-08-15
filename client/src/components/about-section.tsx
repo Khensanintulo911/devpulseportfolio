@@ -27,22 +27,38 @@ export default function AboutSection() {
             <div className="space-y-6">
               <div className="prose prose-lg">
                 <p className="text-slate-600 leading-relaxed">
-                  {profile?.bio || "I'm a passionate full-stack developer with expertise in creating innovative web applications that solve real-world problems. My journey in technology has led me to develop comprehensive solutions ranging from political engagement platforms to business management systems."}
+                  {profile?.bio || "I'm the founder of Dev Pulse - a technology brand focused on building innovative solutions that bridge engineering and software development. My journey from Mining Engineering at Wits University to full-stack development represents the evolution of traditional engineering into the digital age."}
                 </p>
                 <p className="text-slate-600 leading-relaxed">
-                  With a focus on user experience and robust functionality, I specialize in building scalable applications that make a meaningful impact in their respective domains.
+                  Currently completing the HyperionDev Graduate Program, I bring a unique perspective that combines analytical problem-solving from engineering with modern software development practices. This hybrid approach enables me to create comprehensive applications that solve complex real-world challenges.
                 </p>
               </div>
 
               <div className="mt-8">
+                <h3 className="font-semibold text-xl text-dev-slate mb-4">Technical Journey</h3>
+                <div className="space-y-4 mb-6">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-3 h-3 bg-dev-blue rounded-full"></div>
+                    <span className="text-slate-600">BSc Mining Engineering (2019-2021) - Wits University</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-3 h-3 bg-dev-cyan rounded-full"></div>
+                    <span className="text-slate-600">HyperionDev Software Engineering Bootcamp - Completed</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <span className="text-slate-600">HyperionDev Graduate Program - Current</span>
+                  </div>
+                </div>
+                
                 <h3 className="font-semibold text-xl text-dev-slate mb-4">Core Technologies</h3>
                 <div className="flex flex-wrap gap-3">
-                  <span className="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg font-medium">JavaScript</span>
-                  <span className="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg font-medium">React</span>
-                  <span className="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg font-medium">Node.js</span>
-                  <span className="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg font-medium">Python</span>
-                  <span className="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg font-medium">MongoDB</span>
-                  <span className="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg font-medium">PostgreSQL</span>
+                  <span className="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg font-medium">Python/Django</span>
+                  <span className="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg font-medium">JavaScript/React</span>
+                  <span className="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg font-medium">Vue.js</span>
+                  <span className="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg font-medium">Node.js/Express</span>
+                  <span className="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg font-medium">PostgreSQL/MySQL</span>
+                  <span className="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg font-medium">MATLAB/AutoCAD</span>
                 </div>
               </div>
             </div>

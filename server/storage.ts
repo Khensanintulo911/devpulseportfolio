@@ -19,11 +19,11 @@ export class MemStorage implements IStorage {
     // Initialize with default profile
     this.profile = {
       id: randomUUID(),
-      name: "Dev Pulse Developer",
-      bio: "I'm a passionate full-stack developer with expertise in creating innovative web applications that solve real-world problems. My journey in technology has led me to develop comprehensive solutions ranging from political engagement platforms to business management systems.",
-      linkedinUrl: "",
-      whatsappNumber: "",
-      phoneNumber: "",
+      name: "Khensani Daniel Ntulo",
+      bio: "I'm the founder of Dev Pulse - a technology brand focused on building innovative solutions that bridge engineering and software development. My journey from Mining Engineering at Wits University to full-stack development represents the evolution of traditional engineering into the digital age. Currently completing the HyperionDev Graduate Program, I specialize in creating comprehensive applications that solve real-world problems across political engagement, business management, and educational platforms.",
+      linkedinUrl: null,
+      whatsappNumber: null,
+      phoneNumber: null,
     };
   }
 
@@ -50,7 +50,14 @@ export class MemStorage implements IStorage {
 
   async createProfile(insertProfile: InsertProfile): Promise<Profile> {
     const id = randomUUID();
-    const profile: Profile = { ...insertProfile, id };
+    const profile: Profile = { 
+      id,
+      name: insertProfile.name,
+      bio: insertProfile.bio,
+      linkedinUrl: insertProfile.linkedinUrl || null,
+      whatsappNumber: insertProfile.whatsappNumber || null,
+      phoneNumber: insertProfile.phoneNumber || null
+    };
     this.profile = profile;
     return profile;
   }

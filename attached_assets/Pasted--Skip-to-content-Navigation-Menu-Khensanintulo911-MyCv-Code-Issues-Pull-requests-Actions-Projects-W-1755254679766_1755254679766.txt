@@ -1,0 +1,239 @@
+
+Skip to content
+Navigation Menu
+Khensanintulo911
+MyCv
+
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+
+    Settings
+
+    MyCv
+
+/learning_journey.html
+ 
+
+205 lines (196 loc) · 11.7 KB
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Journey - Khensani Daniel Ntulo</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about_page.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects_page.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="learning_journey.html">Learning Journey</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Learning Journey Header -->
+    <section class="py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="display-4 fw-bold text-dev-pulse mb-3">Khensani Ntulo</h1>
+                    <p class="lead">My Learning Journey</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Currently Learning Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card border-0 shadow-sm mb-5">
+                        <div class="card-body p-5">
+                            <h2 class="h3 text-dev-pulse mb-4">
+                                <i class="fas fa-laptop-code me-3"></i>Currently Learning
+                            </h2>
+                            <p class="mb-4">
+                                I am currently enrolled in a full-time software development bootcamp at <strong>HyperionDev</strong>. This experience is helping me sharpen my skills in software engineering through structured tasks, real-world challenges, and mentor-guided learning.
+                            </p>
+                            <p class="mb-3"><strong>Focus areas include:</strong></p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Clean code principles and logical problem-solving</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Building interactive and dynamic applications</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Version control and collaborative workflows</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Backend development and data handling</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Technical Skills Section -->
+                    <div class="card border-0 shadow-sm mb-5">
+                        <div class="card-body p-5">
+                            <h2 class="h3 text-dev-pulse mb-4">
+                                <i class="fas fa-tools me-3"></i>Technical Skills (Tech Stack)
+                            </h2>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <h5 class="fw-semibold">Languages:</h5>
+                                    <div class="skills-badges">
+                                        <span class="badge bg-primary me-1 mb-1">Python</span>
+                                        <span class="badge bg-primary me-1 mb-1">HTML</span>
+                                        <span class="badge bg-primary me-1 mb-1">CSS</span>
+                                        <span class="badge bg-primary mb-1">JavaScript</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <h5 class="fw-semibold">Frameworks:</h5>
+                                    <div class="skills-badges">
+                                        <span class="badge bg-success me-1 mb-1">Django</span>
+                                        <span class="badge bg-success me-1 mb-1">Flask</span>
+                                        <span class="badge bg-success mb-1">Bootstrap</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <h5 class="fw-semibold">Tools:</h5>
+                                    <div class="skills-badges">
+                                        <span class="badge bg-info me-1 mb-1">Git</span>
+                                        <span class="badge bg-info me-1 mb-1">GitHub</span>
+                                        <span class="badge bg-info me-1 mb-1">Linux Terminal</span>
+                                        <span class="badge bg-info mb-1">VS Code</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <h5 class="fw-semibold">Databases:</h5>
+                                    <div class="skills-badges">
+                                        <span class="badge bg-warning me-1 mb-1">SQLite</span>
+                                        <span class="badge bg-warning mb-1">PostgreSQL</span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <h5 class="fw-semibold">Math & Engineering Software:</h5>
+                                    <div class="skills-badges">
+                                        <span class="badge bg-secondary me-1 mb-1">AutoCAD</span>
+                                        <span class="badge bg-secondary me-1 mb-1">SolidEdge</span>
+                                        <span class="badge bg-secondary mb-1">MATLAB</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- University Modules Section -->
+                    <div class="card border-0 shadow-sm mb-5">
+                        <div class="card-body p-5">
+                            <h2 class="h3 text-dev-pulse mb-4">
+                                <i class="fas fa-university me-3"></i>University Modules Completed
+                            </h2>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="fas fa-calculator text-primary me-2"></i>Mathematics 1A</li>
+                                        <li class="mb-2"><i class="fas fa-calculator text-primary me-2"></i>Mathematics 1B</li>
+                                        <li class="mb-2"><i class="fas fa-square-root-alt text-primary me-2"></i>Applied Mathematics</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="fas fa-cogs text-primary me-2"></i>Applied Mechanics</li>
+                                        <li class="mb-2"><i class="fas fa-drafting-compass text-primary me-2"></i>Engineering Drawing & Design</li>
+                                        <li class="mb-2"><i class="fas fa-code text-primary me-2"></i>MATLAB Programming for Engineers</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Why HyperionDev Section -->
+                    <div class="card border-0 shadow-sm mb-5">
+                        <div class="card-body p-5">
+                            <h2 class="h3 text-dev-pulse mb-4">
+                                <i class="fas fa-question-circle me-3"></i>Why HyperionDev?
+                            </h2>
+                            <p>
+                                HyperionDev offers hands-on, project-based learning and one-on-one mentor feedback — exactly what I needed to transition confidently into the software field. It's not just about writing code, but solving problems the right way, learning version control, and understanding how to build full systems.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Looking Ahead Section -->
+                    <div class="card border-0 shadow-sm mb-5">
+                        <div class="card-body p-5">
+                            <h2 class="h3 text-dev-pulse mb-4">
+                                <i class="fas fa-rocket me-3"></i>Looking Ahead
+                            </h2>
+                            <p>
+                                After completing my bootcamp, I plan to grow my portfolio further, take on freelance or junior developer roles, and work toward combining my engineering and programming knowledge in technical fields such as automation, simulation, or product design.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Back to Portfolio Button -->
+                    <div class="text-center">
+                        <a href="index.html" class="btn btn-dev-pulse btn-lg">
+                            <i class="fas fa-arrow-left me-2"></i>Back to Portfolio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 Khensani Daniel Ntulo. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-links">
+                        <a href="#" class="me-3"><i class="fab fa-github"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (required for navbar toggle) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+Footer
+© 2025 GitHub, Inc.
+Footer navigation
+
+    Terms
+    Privacy
+    Security
+    Status
+    Docs
+    Contact
+

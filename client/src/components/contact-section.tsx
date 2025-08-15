@@ -29,7 +29,7 @@ export default function ContactSection() {
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
-  const formatContactLink = (type: 'linkedin' | 'whatsapp' | 'phone', value?: string) => {
+  const formatContactLink = (type: 'linkedin' | 'whatsapp' | 'phone', value?: string | null) => {
     if (!value) return '#';
     
     switch (type) {
@@ -49,9 +49,9 @@ export default function ContactSection() {
     <section id="contact" className="py-16 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-dev-slate mb-4">Let's Connect</h2>
+          <h2 className="text-4xl font-bold text-dev-slate mb-4">Connect with Dev Pulse</h2>
           <p className="text-slate-600 mb-12 max-w-2xl mx-auto">
-            Ready to collaborate or discuss opportunities? I'm always excited to work on new projects and connect with fellow developers and businesses.
+            Ready to collaborate on innovative solutions? Whether you're looking for engineering-focused software development, technical consulting, or want to discuss how traditional engineering can evolve through technology, I'm excited to connect.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">

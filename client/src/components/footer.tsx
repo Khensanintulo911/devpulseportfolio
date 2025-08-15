@@ -13,7 +13,7 @@ export default function Footer() {
           </div>
           
           <p className="text-slate-300 mb-8">
-            Building innovative solutions that make a difference.
+            Engineering Innovation Through Code - Bridging Traditional Engineering with Modern Software Development
           </p>
           
           <div className="flex justify-center space-x-6 mb-8">

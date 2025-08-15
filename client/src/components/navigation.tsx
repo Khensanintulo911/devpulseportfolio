@@ -50,7 +50,7 @@ export default function Navigation({ onEditProfile }: NavigationProps) {
               className="bg-dev-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center"
             >
               <i className="fas fa-edit mr-2"></i>
-              Edit Profile
+              Update Profile
             </button>
           </div>
 
@@ -88,7 +88,7 @@ export default function Navigation({ onEditProfile }: NavigationProps) {
                 className="bg-dev-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-left flex items-center"
               >
                 <i className="fas fa-edit mr-2"></i>
-                Edit Profile
+                Update Profile
               </button>
             </div>
           </div>

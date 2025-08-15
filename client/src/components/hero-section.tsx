@@ -18,7 +18,10 @@ export default function HeroSection() {
               Dev Pulse
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 mb-8">
-              Full-Stack Developer & Digital Innovator
+              Engineering Innovation Through Code
+            </p>
+            <p className="text-lg text-slate-400 mb-8 max-w-2xl mx-auto">
+              Where traditional engineering meets modern software development - building solutions that bridge the physical and digital worlds
             </p>
           </div>
 

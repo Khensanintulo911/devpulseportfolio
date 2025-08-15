@@ -2,34 +2,34 @@ export default function ProjectsSection() {
   const projects = [
     {
       id: 1,
-      title: "Vote SA",
-      description: "A comprehensive web application that allows users to dive into South African politics, explore different parties, and participate in the democratic process through secure voting mechanisms.",
-      image: "https://pixabay.com/get/g5c8d6599a14fadd097d960e18305a4f2ecd1161c1a193f65da3e8d9af40b2449396ee9dff440b9bdd2d7f87f3f66214103f81ca7c4b88714c7de4105ee0363df_1280.jpg",
-      category: "Politics",
+      title: "VoteSphere SA",
+      description: "A comprehensive political engagement platform that allows users to dive deep into South African politics and parties. Users can explore party platforms, understand political positions, and participate in the democratic process through secure voting mechanisms and political insights.",
+      image: "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+      category: "Civic Tech",
       categoryColor: "bg-red-500",
-      technologies: ["React", "Node.js", "MongoDB"],
+      technologies: ["React", "Node.js", "MongoDB", "Express"],
       githubUrl: "https://github.com/Khensanintulo911/votesphereSA",
       gradient: "from-red-500 to-orange-500"
     },
     {
       id: 2,
-      title: "StockSA",
-      description: "A robust inventory management system designed for South African businesses. Features real-time stock tracking, automated alerts, and comprehensive analytics for efficient business operations.",
+      title: "Stockify SA",
+      description: "A robust inventory management system specifically designed for South African businesses. Features real-time stock tracking, automated low-stock alerts, comprehensive analytics, and business intelligence dashboards for efficient operations and data-driven decision making.",
       image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      category: "Business",
+      category: "Business Solutions",
       categoryColor: "bg-green-500",
-      technologies: ["React", "Express", "PostgreSQL"],
+      technologies: ["React", "Express", "PostgreSQL", "Charts.js"],
       githubUrl: "https://github.com/Khensanintulo911/stockifysa",
       gradient: "from-green-500 to-emerald-500"
     },
     {
       id: 3,
       title: "Klasora",
-      description: "An innovative academic platform connecting teachers and students. Features grade selection, subject management, dynamic content generation, interactive quizzes, and comprehensive progress tracking.",
+      description: "An innovative academic platform that connects teachers and students in a comprehensive learning environment. Features include grade selection, subject management, dynamic content generation, interactive quizzes, tests, and detailed progress tracking for both educators and learners.",
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      category: "Education",
+      category: "EdTech",
       categoryColor: "bg-purple-500",
-      technologies: ["Vue.js", "Django", "MySQL"],
+      technologies: ["Vue.js", "Django", "MySQL", "Python"],
       githubUrl: "https://github.com/Khensanintulo911/Klasora",
       gradient: "from-purple-500 to-indigo-500"
     }
@@ -39,9 +39,9 @@ export default function ProjectsSection() {
     <section id="projects" className="py-16 bg-slate-50">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-dev-slate mb-4">Featured Projects</h2>
+          <h2 className="text-4xl font-bold text-center text-dev-slate mb-4">Dev Pulse Solutions</h2>
           <p className="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
-            Explore my portfolio of innovative web applications that showcase my expertise in full-stack development and problem-solving.
+            Explore our portfolio of innovative applications that demonstrate how engineering thinking and software development can create comprehensive solutions across civic engagement, business management, and education.
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
