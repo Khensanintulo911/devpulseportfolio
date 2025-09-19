@@ -1,0 +1,8 @@
+  toml
+     [build]
+     builder = "nixpacks"
+     buildCommand = "python manage.py collectstatic --noinput && python manage.py migrate && python manage.py setup_klasora"
+
+     [deploy]
+     startCommand = "gunicorn devpulseportfolio.wsgi:application"
+     

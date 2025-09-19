@@ -1,0 +1,528 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Pulse - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    'inter': ['Inter', 'sans-serif'],
+                },
+                colors: {
+                    'dev-blue': '#2563eb',
+                    'dev-slate': '#1e293b',
+                    'dev-cyan': '#06b6d4',
+                }
+            }
+        }
+    };
+    </script>
+</head>
+<body class="font-inter bg-slate-50 text-slate-700">
+    <!-- @COMPONENT: Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm border-b border-slate-200 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-br from-dev-blue to-dev-cyan rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">DP</span>
+                    </div>
+                    <span class="font-bold text-xl text-dev-slate">Dev Pulse</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-slate-600 hover:text-dev-blue transition-colors">About</a>
+                    <a href="#projects" class="text-slate-600 hover:text-dev-blue transition-colors">Projects</a>
+                    <a href="#contact" class="text-slate-600 hover:text-dev-blue transition-colors">Contact</a>
+                    <button onclick="openProfileModal()" class="bg-dev-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        <i class="fas fa-edit mr-2"></i>Edit Profile
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button class="md:hidden text-slate-600" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile menu -->
+            <div id="mobileMenu" class="md:hidden mt-4 pb-4 border-t border-slate-200 hidden">
+                <div class="flex flex-col space-y-4 pt-4">
+                    <a href="#about" class="text-slate-600 hover:text-dev-blue transition-colors">About</a>
+                    <a href="#projects" class="text-slate-600 hover:text-dev-blue transition-colors">Projects</a>
+                    <a href="#contact" class="text-slate-600 hover:text-dev-blue transition-colors">Contact</a>
+                    <button onclick="openProfileModal()" class="bg-dev-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-left">
+                        <i class="fas fa-edit mr-2"></i>Edit Profile
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section class="pt-24 pb-16 bg-gradient-to-br from-slate-900 via-dev-slate to-slate-800 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-4xl mx-auto">
+                <!-- Dev Pulse Logo -->
+                <div class="mb-8">
+                    <div class="w-24 h-24 bg-gradient-to-br from-dev-blue to-dev-cyan rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                        <span class="text-white font-bold text-3xl">DP</span>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">
+                        Dev Pulse
+                    </h1>
+                    <p class="text-xl md:text-2xl text-slate-300 mb-8">
+                        Full-Stack Developer & Digital Innovator
+                    </p>
+                </div>
+
+                <!-- Proceed Button -->
+                <div class="mb-12">
+                    <button onclick="proceedToPortfolio()" class="group bg-white text-dev-slate px-8 py-4 rounded-xl font-semibold text-lg hover:bg-slate-100 transition-all duration-300 transform hover:scale-105 shadow-xl">
+                        <span class="mr-3">Explore My Work</span>
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
+                    </button>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-dev-cyan">3+</div>
+                        <div class="text-slate-300">Projects Completed</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-dev-cyan">2+</div>
+                        <div class="text-slate-300">Years Experience</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-dev-cyan">100%</div>
+                        <div class="text-slate-300">Client Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-center text-dev-slate mb-12">About Me</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <!-- Professional workspace image -->
+                        <div class="relative">
+                            <!-- A modern developer workspace with multiple monitors, keyboard, and coffee -->
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                                 alt="Developer workspace with computer setup" 
+                                 class="rounded-2xl shadow-lg w-full h-auto" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-dev-blue/20 to-transparent rounded-2xl"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="prose prose-lg">
+                            <p class="text-slate-600 leading-relaxed" data-bind="profile.bio">
+                                I'm a passionate full-stack developer with expertise in creating innovative web applications that solve real-world problems. My journey in technology has led me to develop comprehensive solutions ranging from political engagement platforms to business management systems.
+                            </p>
+                            <p class="text-slate-600 leading-relaxed">
+                                With a focus on user experience and robust functionality, I specialize in building scalable applications that make a meaningful impact in their respective domains.
+                            </p>
+                        </div>
+
+                        <!-- Skills -->
+                        <div class="mt-8">
+                            <h3 class="font-semibold text-xl text-dev-slate mb-4">Core Technologies</h3>
+                            <div class="flex flex-wrap gap-3">
+                                <!-- @MAP: skills.map(skill => ( -->
+                                <span class="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg font-medium">JavaScript</span>
+                                <span class="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg font-medium">React</span>
+                                <span class="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg font-medium">Node.js</span>
+                                <span class="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg font-medium">Python</span>
+                                <span class="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg font-medium">MongoDB</span>
+                                <span class="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg font-medium">PostgreSQL</span>
+                                <!-- @END_MAP )) -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About Section -->
+
+    <!-- @COMPONENT: Projects Section -->
+    <section id="projects" class="py-16 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-center text-dev-slate mb-4">Featured Projects</h2>
+                <p class="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
+                    Explore my portfolio of innovative web applications that showcase my expertise in full-stack development and problem-solving.
+                </p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Project 1: Vote SA -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                        <div class="relative h-48 bg-gradient-to-br from-red-500 to-orange-500">
+                            <!-- South African flag or voting interface screenshot -->
+                            <img src="https://pixabay.com/get/g5c8d6599a14fadd097d960e18305a4f2ecd1161c1a193f65da3e8d9af40b2449396ee9dff440b9bdd2d7f87f3f66214103f81ca7c4b88714c7de4105ee0363df_1280.jpg" 
+                                 alt="Vote SA political voting interface" 
+                                 class="w-full h-full object-cover" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium">Politics</span>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-dev-slate mb-3">Vote SA</h3>
+                            <p class="text-slate-600 mb-4 line-clamp-3">
+                                A comprehensive web application that allows users to dive into South African politics, explore different parties, and participate in the democratic process through secure voting mechanisms.
+                            </p>
+                            
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-lg text-sm">React</span>
+                                <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-lg text-sm">Node.js</span>
+                                <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-lg text-sm">MongoDB</span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <a href="https://github.com/Khensanintulo911/votesphereSA" 
+                                   target="_blank" 
+                                   class="flex items-center text-dev-blue hover:text-blue-700 font-medium">
+                                    <i class="fab fa-github mr-2"></i>
+                                    View Code
+                                </a>
+                                <button class="bg-dev-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm">
+                                    Live Demo
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: StockSA -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                        <div class="relative h-48 bg-gradient-to-br from-green-500 to-emerald-500">
+                            <!-- Business inventory dashboard screenshot -->
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                                 alt="StockSA business inventory management dashboard" 
+                                 class="w-full h-full object-cover" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">Business</span>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-dev-slate mb-3">StockSA</h3>
+                            <p class="text-slate-600 mb-4 line-clamp-3">
+                                A robust inventory management system designed for South African businesses. Features real-time stock tracking, automated alerts, and comprehensive analytics for efficient business operations.
+                            </p>
+                            
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-lg text-sm">React</span>
+                                <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-lg text-sm">Express</span>
+                                <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-lg text-sm">PostgreSQL</span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <a href="https://github.com/Khensanintulo911/stockifysa" 
+                                   target="_blank" 
+                                   class="flex items-center text-dev-blue hover:text-blue-700 font-medium">
+                                    <i class="fab fa-github mr-2"></i>
+                                    View Code
+                                </a>
+                                <button class="bg-dev-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm">
+                                    Live Demo
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Klasora -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                        <div class="relative h-48 bg-gradient-to-br from-purple-500 to-indigo-500">
+                            <!-- Academic platform with students and teachers -->
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                                 alt="Klasora academic learning platform interface" 
+                                 class="w-full h-full object-cover" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-medium">Education</span>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-dev-slate mb-3">Klasora</h3>
+                            <p class="text-slate-600 mb-4 line-clamp-3">
+                                An innovative academic platform connecting teachers and students. Features grade selection, subject management, dynamic content generation, interactive quizzes, and comprehensive progress tracking.
+                            </p>
+                            
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-lg text-sm">Vue.js</span>
+                                <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-lg text-sm">Django</span>
+                                <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-lg text-sm">MySQL</span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <a href="https://github.com/Khensanintulo911/Klasora" 
+                                   target="_blank" 
+                                   class="flex items-center text-dev-blue hover:text-blue-700 font-medium">
+                                    <i class="fab fa-github mr-2"></i>
+                                    View Code
+                                </a>
+                                <button class="bg-dev-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm">
+                                    Live Demo
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- View All Projects -->
+                <div class="text-center mt-12">
+                    <a href="https://github.com/Khensanintulo911" 
+                       target="_blank" 
+                       class="inline-flex items-center bg-dev-slate text-white px-8 py-3 rounded-xl font-semibold hover:bg-slate-700 transition-colors">
+                        <i class="fab fa-github mr-3"></i>
+                        View All Projects on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Projects Section -->
+
+    <!-- @COMPONENT: Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold text-dev-slate mb-4">Let's Connect</h2>
+                <p class="text-slate-600 mb-12 max-w-2xl mx-auto">
+                    Ready to collaborate or discuss opportunities? I'm always excited to work on new projects and connect with fellow developers and businesses.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <!-- LinkedIn -->
+                    <a href="#" data-bind="contact.linkedin" 
+                       class="group bg-slate-50 p-8 rounded-2xl hover:bg-blue-50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                        <div class="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fab fa-linkedin-in text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg text-dev-slate mb-2">LinkedIn</h3>
+                        <p class="text-slate-600">Professional networking</p>
+                    </a>
+
+                    <!-- WhatsApp -->
+                    <a href="#" data-bind="contact.whatsapp" 
+                       class="group bg-slate-50 p-8 rounded-2xl hover:bg-green-50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                        <div class="w-16 h-16 bg-green-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fab fa-whatsapp text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg text-dev-slate mb-2">WhatsApp</h3>
+                        <p class="text-slate-600">Quick messaging</p>
+                    </a>
+
+                    <!-- Phone Call -->
+                    <a href="#" data-bind="contact.phone" 
+                       class="group bg-slate-50 p-8 rounded-2xl hover:bg-dev-cyan/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                        <div class="w-16 h-16 bg-dev-cyan rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-phone text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg text-dev-slate mb-2">Phone Call</h3>
+                        <p class="text-slate-600">Direct conversation</p>
+                    </a>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-slate-50 rounded-2xl p-8">
+                    <h3 class="text-2xl font-semibold text-dev-slate mb-6">Send a Message</h3>
+                    <form class="space-y-6" data-implementation="Contact form submission">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <input type="text" placeholder="Your Name" 
+                                   class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-dev-blue focus:ring-2 focus:ring-dev-blue/20 outline-none transition-colors">
+                            <input type="email" placeholder="Your Email" 
+                                   class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-dev-blue focus:ring-2 focus:ring-dev-blue/20 outline-none transition-colors">
+                        </div>
+                        <input type="text" placeholder="Subject" 
+                               class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-dev-blue focus:ring-2 focus:ring-dev-blue/20 outline-none transition-colors">
+                        <textarea rows="5" placeholder="Your Message" 
+                                  class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-dev-blue focus:ring-2 focus:ring-dev-blue/20 outline-none transition-colors resize-none"></textarea>
+                        <button type="submit" 
+                                class="w-full bg-dev-blue text-white py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact Section -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-dev-slate text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="flex items-center justify-center space-x-2 mb-6">
+                    <div class="w-8 h-8 bg-gradient-to-br from-dev-blue to-dev-cyan rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">DP</span>
+                    </div>
+                    <span class="font-bold text-xl">Dev Pulse</span>
+                </div>
+                
+                <p class="text-slate-300 mb-8">
+                    Building innovative solutions that make a difference.
+                </p>
+                
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="#" class="text-slate-300 hover:text-white transition-colors">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-slate-300 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-slate-300 hover:text-white transition-colors">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                    </a>
+                </div>
+                
+                <div class="border-t border-slate-700 pt-8">
+                    <p class="text-slate-400 text-sm">
+                        © <span data-bind="currentYear">2024</span> Dev Pulse. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- @COMPONENT: Profile Edit Modal -->
+    <div id="profileModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-6 border-b border-slate-200">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-2xl font-semibold text-dev-slate">Edit Profile</h3>
+                        <button onclick="closeProfileModal()" class="text-slate-400 hover:text-slate-600">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="p-6">
+                    <form class="space-y-6" data-implementation="Profile update form">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Full Name</label>
+                            <input type="text" data-bind="profile.name" placeholder="Your full name" 
+                                   class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-dev-blue focus:ring-2 focus:ring-dev-blue/20 outline-none transition-colors">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Bio</label>
+                            <textarea rows="4" data-bind="profile.bio" placeholder="Tell us about yourself" 
+                                      class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-dev-blue focus:ring-2 focus:ring-dev-blue/20 outline-none transition-colors resize-none"></textarea>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">LinkedIn URL</label>
+                                <input type="url" data-bind="contact.linkedin" placeholder="https://linkedin.com/in/..." 
+                                       class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-dev-blue focus:ring-2 focus:ring-dev-blue/20 outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">WhatsApp Number</label>
+                                <input type="tel" data-bind="contact.whatsapp" placeholder="+27 XX XXX XXXX" 
+                                       class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-dev-blue focus:ring-2 focus:ring-dev-blue/20 outline-none transition-colors">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Phone Number</label>
+                            <input type="tel" data-bind="contact.phone" placeholder="+27 XX XXX XXXX" 
+                                   class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-dev-blue focus:ring-2 focus:ring-dev-blue/20 outline-none transition-colors">
+                        </div>
+                        
+                        <div class="flex items-center justify-end space-x-4 pt-6">
+                            <button type="button" onclick="closeProfileModal()" 
+                                    class="px-6 py-3 border border-slate-200 text-slate-700 rounded-xl hover:bg-slate-50 transition-colors">
+                                Cancel
+                            </button>
+                            <button type="submit" 
+                                    class="px-6 py-3 bg-dev-blue text-white rounded-xl hover:bg-blue-700 transition-colors">
+                                Save Changes
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: Profile Edit Modal -->
+
+    <script>
+        // TODO: Implement business logic, API calls, and state management
+        
+        (function() {
+            // Mobile menu toggle
+            window.toggleMobileMenu = function() {
+                const menu = document.getElementById('mobileMenu');
+                menu.classList.toggle('hidden');
+            };
+
+            // Smooth scroll to sections
+            window.proceedToPortfolio = function() {
+                document.getElementById('about').scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
+            };
+
+            // Profile modal functions
+            window.openProfileModal = function() {
+                document.getElementById('profileModal').classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            };
+
+            window.closeProfileModal = function() {
+                document.getElementById('profileModal').classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            };
+
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Close mobile menu when clicking on links
+            document.querySelectorAll('#mobileMenu a').forEach(link => {
+                link.addEventListener('click', function() {
+                    document.getElementById('mobileMenu').classList.add('hidden');
+                });
+            });
+
+            // Close modal when clicking outside
+            document.getElementById('profileModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeProfileModal();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
