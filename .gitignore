@@ -4,4 +4,4 @@ dist
 server/public
 vite.config.ts.*
 *.tar.gz
-env/
+env/git remote add origin https://github.com/Khensanintulo911/Khensani-Ntulo.git
