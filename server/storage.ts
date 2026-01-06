@@ -1,4 +1,4 @@
-import { type User, type InsertUser, type Profile, type InsertProfile, type UpdateProfile } from "@shared/schema";
+import { type User, type InsertUser, type Profile, type InsertProfile, type UpdateProfile, type Project, type InsertProject } from "@shared/schema";
 import { randomUUID } from "crypto";
 
 export interface IStorage {
@@ -8,24 +8,75 @@ export interface IStorage {
   getProfile(): Promise<Profile | undefined>;
   createProfile(profile: InsertProfile): Promise<Profile>;
   updateProfile(profile: UpdateProfile): Promise<Profile | undefined>;
+  getProjects(): Promise<Project[]>;
+  createProject(project: InsertProject): Promise<Project>;
 }
 
 export class MemStorage implements IStorage {
   private users: Map<string, User>;
+  private projects: Map<string, Project>;
   private profile: Profile | undefined;
 
   constructor() {
     this.users = new Map();
+    this.projects = new Map();
+    
     // Initialize with default profile
     this.profile = {
       id: randomUUID(),
       name: "Khensani Daniel Ntulo",
-      bio: "I'm the founder of Dev Pulse - a technology brand focused on building innovative solutions that bridge engineering and software development. My journey from Mining Engineering at Wits University to full-stack development represents the evolution of traditional engineering into the digital age. Currently completing the HyperionDev Graduate Program and actively seeking opportunities to apply my skills in real-world projects.",
+      bio: "Aspiring professional with a unique blend of engineering background and emerging software development skills. Transitioning from Mining Engineering at Wits University to technology, focusing on building practical solutions that bridge the physical and digital worlds.",
       location: "Gauteng, Alberton 1458",
-      linkedinUrl: null,
+      linkedinUrl: "https://linkedin.com/in/khensani-ntulo",
       whatsappNumber: null,
       phoneNumber: null,
+      email: "khensanintulo@gmail.com",
+      tagline: "Aspiring Full-Stack Developer | Python • Django • JavaScript/TypeScript",
+      education: [
+        "HyperionDev Software Engineering Bootcamp (Completed)",
+        "BSc Mining Engineering (2 years) - Wits University",
+        "Matric Certificate - Eden Ridge High School"
+      ],
+      skills: [
+        "Python (Django, Flask)",
+        "JavaScript (TypeScript)",
+        "HTML/CSS",
+        "SQL (PostgreSQL, SQLite)",
+        "Git/GitHub",
+        "MATLAB",
+        "AutoCAD/SolidEdge"
+      ]
     };
+
+    // Initialize with projects
+    const initialProjects: InsertProject[] = [
+      {
+        title: "VoteSphere: VoteSA",
+        description: "A comprehensive web-based voting platform designed for South African political parties. Enables users to learn about political parties, engage in discussions, and cast secure votes online.",
+        techStack: ["Django", "Python", "HTML/CSS", "JavaScript", "PostgreSQL"],
+        repoUrl: "https://github.com/Khensanintulo911/Khensani-Ntulo",
+        demoUrl: null,
+        imageUrl: "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c"
+      },
+      {
+        title: "StockTracker SA",
+        description: "An inventory management system built for small-scale businesses in South Africa. Tracks stock levels, calculates profits, flags expired goods, and identifies moving products.",
+        techStack: ["Python", "Django", "HTML/CSS", "SQLite"],
+        repoUrl: "https://github.com/Khensanintulo911/Khensani-Ntulo",
+        demoUrl: null,
+        imageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40"
+      },
+      {
+        title: "Klasora",
+        description: "An innovative academic platform connecting teachers and students. Features grade selection, subject management, and progress tracking.",
+        techStack: ["Django", "HTML", "CSS", "JavaScript", "SQL"],
+        repoUrl: "https://github.com/Khensanintulo911/Klasora",
+        demoUrl: null,
+        imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+      }
+    ];
+
+    initialProjects.forEach(p => this.createProject(p));
   }
 
   async getUser(id: string): Promise<User | undefined> {
@@ -53,24 +104,42 @@ export class MemStorage implements IStorage {
     const id = randomUUID();
     const profile: Profile = { 
       id,
-      name: insertProfile.name,
-      bio: insertProfile.bio,
+      ...insertProfile,
       location: insertProfile.location || null,
       linkedinUrl: insertProfile.linkedinUrl || null,
       whatsappNumber: insertProfile.whatsappNumber || null,
-      phoneNumber: insertProfile.phoneNumber || null
+      phoneNumber: insertProfile.phoneNumber || null,
+      email: insertProfile.email || null,
+      tagline: insertProfile.tagline || null,
+      education: insertProfile.education || [],
+      skills: insertProfile.skills || []
     };
     this.profile = profile;
     return profile;
   }
 
   async updateProfile(updateProfile: UpdateProfile): Promise<Profile | undefined> {
-    if (!this.profile) {
-      return undefined;
-    }
-    
+    if (!this.profile) return undefined;
     this.profile = { ...this.profile, ...updateProfile };
     return this.profile;
+  }
+
+  async getProjects(): Promise<Project[]> {
+    return Array.from(this.projects.values());
+  }
+
+  async createProject(insertProject: InsertProject): Promise<Project> {
+    const id = randomUUID();
+    const project: Project = {
+      id,
+      ...insertProject,
+      techStack: insertProject.techStack || [],
+      repoUrl: insertProject.repoUrl || null,
+      demoUrl: insertProject.demoUrl || null,
+      imageUrl: insertProject.imageUrl || null
+    };
+    this.projects.set(id, project);
+    return project;
   }
 }
 

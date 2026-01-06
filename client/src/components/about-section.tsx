@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import type { Profile } from "@shared/schema";
+import { GraduationCap, Code, Rocket, Database, Brain, MapPin } from "lucide-react";
 
 export default function AboutSection() {
   const { data: profile } = useQuery<Profile>({
@@ -7,121 +8,78 @@ export default function AboutSection() {
   });
 
   return (
-    <section id="about" className="py-16 bg-gray-50">
+    <section id="about" className="py-20 bg-gray-50 dark:bg-slate-900">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">About Dev Pulse</h2>
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-4xl font-bold text-center text-slate-900 dark:text-white mb-16">About Me</h2>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                  alt="Developer workspace with computer setup" 
-                  className="rounded-2xl shadow-lg w-full h-auto" 
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-dev-blue/20 to-transparent rounded-2xl"></div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div className="space-y-8">
+              <div className="prose prose-slate dark:prose-invert lg:prose-lg">
+                <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
+                  {profile?.bio || "Aspiring professional with a unique blend of engineering background and emerging software development skills. My journey from Mining Engineering at Wits University to full-stack development represents the evolution of traditional engineering into the digital age."}
+                </p>
+                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                  I recently completed the HyperionDev Software Engineering Bootcamp and I'm now part of their Graduate Program, refining my skills for real-world impact.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex items-center gap-3 p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+                  <MapPin className="w-5 h-5 text-primary" />
+                  <span className="text-slate-700 dark:text-slate-200 font-medium">{profile?.location || 'Gauteng, South Africa'}</span>
+                </div>
+                <div className="flex items-center gap-3 p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+                  <Rocket className="w-5 h-5 text-primary" />
+                  <span className="text-slate-700 dark:text-slate-200 font-medium">HyperionDev Graduate</span>
+                </div>
               </div>
             </div>
             
-            <div className="space-y-6">
-              <div className="prose prose-lg">
-                <div className="bg-white p-6 rounded-xl border border-gray-200 mb-6">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                    <div className="w-8 h-8 bg-gray-700 rounded-lg flex items-center justify-center mr-3">
-                      <span className="text-white font-bold text-sm">DP</span>
-                    </div>
-                    About Dev Pulse
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Dev Pulse is more than just a portfolio - it's my way of showcasing my work and representing myself as something beyond just the name "Khensani". This brand represents my unique approach to technology, combining traditional engineering thinking with modern software development. It's a platform where I can demonstrate my journey, skills, and the innovative solutions I create.
-                  </p>
-                </div>
-                
-                <p className="text-slate-600 leading-relaxed">
-                  {profile?.bio || "I'm the founder of Dev Pulse - a technology brand focused on building innovative solutions that bridge engineering and software development. My journey from Mining Engineering at Wits University to full-stack development represents the evolution of traditional engineering into the digital age."}
-                </p>
-                <div className="bg-gray-100 p-6 rounded-2xl my-6">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gray-600 rounded-xl flex items-center justify-center mr-4">
-                      <i className="fas fa-map-marker-alt text-white text-lg"></i>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-800">{profile?.location || 'Gauteng, Alberton 1458'}</h4>
-                      <p className="text-sm text-gray-600">Open to Remote & On-site Opportunities</p>
-                    </div>
+            <div className="space-y-10">
+              <div>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                  <GraduationCap className="w-6 h-6 text-primary" />
+                  Technical Journey
+                </h3>
+                <div className="space-y-4 relative before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-slate-200 dark:before:bg-slate-700">
+                  <div className="pl-8 relative">
+                    <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-primary border-4 border-white dark:border-slate-900" />
+                    <h4 className="font-bold text-slate-900 dark:text-white">HyperionDev Graduate Program</h4>
+                    <p className="text-slate-500 dark:text-slate-400">Current • Job Search & Mentorship</p>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center">
-                        <i className="fas fa-rocket text-white text-sm"></i>
-                      </div>
-                      <span className="text-gray-600">Currently Learning: TypeScript</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center">
-                        <i className="fas fa-code text-white text-sm"></i>
-                      </div>
-                      <span className="text-gray-600">Advancing: JavaScript</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center">
-                        <i className="fas fa-database text-white text-sm"></i>
-                      </div>
-                      <span className="text-gray-600">Future Focus: Databases</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center">
-                        <i className="fas fa-brain text-white text-sm"></i>
-                      </div>
-                      <span className="text-gray-600">Goal: Data Science & ML</span>
-                    </div>
+                  <div className="pl-8 relative">
+                    <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-primary border-4 border-white dark:border-slate-900" />
+                    <h4 className="font-bold text-slate-900 dark:text-white">Software Engineering Bootcamp</h4>
+                    <p className="text-slate-500 dark:text-slate-400">Completed • HyperionDev</p>
+                  </div>
+                  <div className="pl-8 relative">
+                    <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-600 border-4 border-white dark:border-slate-900" />
+                    <h4 className="font-bold text-slate-900 dark:text-white">BSc Mining Engineering</h4>
+                    <p className="text-slate-500 dark:text-slate-400">2019 - 2021 • Wits University</p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-8">
-                <h3 className="font-semibold text-xl text-dev-slate mb-4">Technical Journey</h3>
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-dev-blue rounded-full"></div>
-                    <span className="text-slate-600">BSc Mining Engineering (2019-2021) - Wits University</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-dev-cyan rounded-full"></div>
-                    <span className="text-slate-600">HyperionDev Software Engineering Bootcamp - Completed</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                    <span className="text-slate-600">HyperionDev Graduate Program - Current</span>
-                  </div>
-                </div>
-                
-                <h3 className="font-semibold text-xl text-gray-800 mb-4">Technology Stack</h3>
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="text-sm font-medium text-gray-500 mb-2">Current Expertise</h4>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="bg-gray-600 text-white px-3 py-1 rounded-lg text-sm font-medium">Python/Django</span>
-                      <span className="bg-gray-600 text-white px-3 py-1 rounded-lg text-sm font-medium">HTML/CSS</span>
-                      <span className="bg-gray-600 text-white px-3 py-1 rounded-lg text-sm font-medium">JavaScript</span>
-                      <span className="bg-gray-600 text-white px-3 py-1 rounded-lg text-sm font-medium">SQL</span>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-medium text-gray-500 mb-2">Currently Learning</h4>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="bg-gray-500 text-white px-3 py-1 rounded-lg text-sm font-medium">TypeScript</span>
-                      <span className="bg-gray-500 text-white px-3 py-1 rounded-lg text-sm font-medium">Advanced JavaScript</span>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-medium text-gray-500 mb-2">Engineering Background</h4>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="bg-gray-700 text-white px-3 py-1 rounded-lg text-sm font-medium">MATLAB</span>
-                      <span className="bg-gray-700 text-white px-3 py-1 rounded-lg text-sm font-medium">AutoCAD</span>
-                    </div>
-                  </div>
+              <div>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                  <Code className="w-6 h-6 text-primary" />
+                  Technology Stack
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {profile?.skills?.map((skill) => (
+                    <span key={skill} className="px-3 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm">
+                      {skill}
+                    </span>
+                  ))}
+                  {!profile?.skills && (
+                    <>
+                      <span className="px-3 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm">Python (Django)</span>
+                      <span className="px-3 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm">TypeScript</span>
+                      <span className="px-3 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm">JavaScript</span>
+                      <span className="px-3 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm">SQL</span>
+                    </>
+                  )}
                 </div>
               </div>
             </div>

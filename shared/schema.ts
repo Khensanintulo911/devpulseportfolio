@@ -17,6 +17,20 @@ export const profiles = pgTable("profiles", {
   linkedinUrl: text("linkedin_url"),
   whatsappNumber: text("whatsapp_number"),
   phoneNumber: text("phone_number"),
+  email: text("email"),
+  tagline: text("tagline"),
+  education: text("education").array(),
+  skills: text("skills").array(),
+});
+
+export const projects = pgTable("projects", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  title: text("title").notNull(),
+  description: text("description").notNull(),
+  techStack: text("tech_stack").array(),
+  repoUrl: text("repo_url"),
+  demoUrl: text("demo_url"),
+  imageUrl: text("image_url"),
 });
 
 export const insertUserSchema = createInsertSchema(users).pick({
@@ -30,8 +44,14 @@ export const insertProfileSchema = createInsertSchema(profiles).omit({
 
 export const updateProfileSchema = insertProfileSchema.partial();
 
+export const insertProjectSchema = createInsertSchema(projects).omit({
+  id: true,
+});
+
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type Profile = typeof profiles.$inferSelect;
 export type InsertProfile = z.infer<typeof insertProfileSchema>;
 export type UpdateProfile = z.infer<typeof updateProfileSchema>;
+export type Project = typeof projects.$inferSelect;
+export type InsertProject = z.infer<typeof insertProjectSchema>;
