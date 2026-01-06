@@ -1,11 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 import type { Profile } from "@shared/schema";
-import { GraduationCap, Code, Rocket, Database, Brain, MapPin } from "lucide-react";
+import { GraduationCap, Code, Rocket, MapPin } from "lucide-react";
 
 export default function AboutSection() {
   const { data: profile } = useQuery<Profile>({
     queryKey: ['/api/profile'],
   });
+
+  const skills = profile?.skills ? JSON.parse(profile.skills) as string[] : [];
+  const education = profile?.education ? JSON.parse(profile.education) as string[] : [];
 
   return (
     <section id="about" className="py-20 bg-gray-50 dark:bg-slate-900">
@@ -43,21 +46,26 @@ export default function AboutSection() {
                   Technical Journey
                 </h3>
                 <div className="space-y-4 relative before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-slate-200 dark:before:bg-slate-700">
-                  <div className="pl-8 relative">
-                    <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-primary border-4 border-white dark:border-slate-900" />
-                    <h4 className="font-bold text-slate-900 dark:text-white">HyperionDev Graduate Program</h4>
-                    <p className="text-slate-500 dark:text-slate-400">Current • Job Search & Mentorship</p>
-                  </div>
-                  <div className="pl-8 relative">
-                    <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-primary border-4 border-white dark:border-slate-900" />
-                    <h4 className="font-bold text-slate-900 dark:text-white">Software Engineering Bootcamp</h4>
-                    <p className="text-slate-500 dark:text-slate-400">Completed • HyperionDev</p>
-                  </div>
-                  <div className="pl-8 relative">
-                    <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-600 border-4 border-white dark:border-slate-900" />
-                    <h4 className="font-bold text-slate-900 dark:text-white">BSc Mining Engineering</h4>
-                    <p className="text-slate-500 dark:text-slate-400">2019 - 2021 • Wits University</p>
-                  </div>
+                  {education.map((item, idx) => (
+                    <div key={idx} className="pl-8 relative">
+                      <div className={`absolute left-0 top-1.5 w-4 h-4 rounded-full ${idx === 0 ? 'bg-primary' : 'bg-slate-300 dark:bg-slate-600'} border-4 border-white dark:border-slate-900`} />
+                      <h4 className="font-bold text-slate-900 dark:text-white">{item}</h4>
+                    </div>
+                  ))}
+                  {education.length === 0 && (
+                    <>
+                      <div className="pl-8 relative">
+                        <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-primary border-4 border-white dark:border-slate-900" />
+                        <h4 className="font-bold text-slate-900 dark:text-white">HyperionDev Graduate Program</h4>
+                        <p className="text-slate-500 dark:text-slate-400">Current • Job Search & Mentorship</p>
+                      </div>
+                      <div className="pl-8 relative">
+                        <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-primary border-4 border-white dark:border-slate-900" />
+                        <h4 className="font-bold text-slate-900 dark:text-white">Software Engineering Bootcamp</h4>
+                        <p className="text-slate-500 dark:text-slate-400">Completed • HyperionDev</p>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
 
@@ -67,17 +75,15 @@ export default function AboutSection() {
                   Technology Stack
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {profile?.skills?.map((skill) => (
+                  {skills.map((skill) => (
                     <span key={skill} className="px-3 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm">
                       {skill}
                     </span>
                   ))}
-                  {!profile?.skills && (
+                  {skills.length === 0 && (
                     <>
                       <span className="px-3 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm">Python (Django)</span>
                       <span className="px-3 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm">TypeScript</span>
-                      <span className="px-3 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm">JavaScript</span>
-                      <span className="px-3 py-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 shadow-sm">SQL</span>
                     </>
                   )}
                 </div>

@@ -32,12 +32,12 @@ export class MemStorage implements IStorage {
       phoneNumber: null,
       email: "khensanintulo@gmail.com",
       tagline: "Aspiring Full-Stack Developer | Python • Django • JavaScript/TypeScript",
-      education: [
+      education: JSON.stringify([
         "HyperionDev Software Engineering Bootcamp (Completed)",
         "BSc Mining Engineering (2 years) - Wits University",
         "Matric Certificate - Eden Ridge High School"
-      ],
-      skills: [
+      ]),
+      skills: JSON.stringify([
         "Python (Django, Flask)",
         "JavaScript (TypeScript)",
         "HTML/CSS",
@@ -45,7 +45,7 @@ export class MemStorage implements IStorage {
         "Git/GitHub",
         "MATLAB",
         "AutoCAD/SolidEdge"
-      ]
+      ])
     };
 
     // Initialize with projects
@@ -53,7 +53,7 @@ export class MemStorage implements IStorage {
       {
         title: "VoteSphere: VoteSA",
         description: "A comprehensive web-based voting platform designed for South African political parties. Enables users to learn about political parties, engage in discussions, and cast secure votes online.",
-        techStack: ["Django", "Python", "HTML/CSS", "JavaScript", "PostgreSQL"],
+        techStack: JSON.stringify(["Django", "Python", "HTML/CSS", "JavaScript", "PostgreSQL"]),
         repoUrl: "https://github.com/Khensanintulo911/Khensani-Ntulo",
         demoUrl: null,
         imageUrl: "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c"
@@ -61,7 +61,7 @@ export class MemStorage implements IStorage {
       {
         title: "StockTracker SA",
         description: "An inventory management system built for small-scale businesses in South Africa. Tracks stock levels, calculates profits, flags expired goods, and identifies moving products.",
-        techStack: ["Python", "Django", "HTML/CSS", "SQLite"],
+        techStack: JSON.stringify(["Python", "Django", "HTML/CSS", "SQLite"]),
         repoUrl: "https://github.com/Khensanintulo911/Khensani-Ntulo",
         demoUrl: null,
         imageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40"
@@ -69,7 +69,7 @@ export class MemStorage implements IStorage {
       {
         title: "Klasora",
         description: "An innovative academic platform connecting teachers and students. Features grade selection, subject management, and progress tracking.",
-        techStack: ["Django", "HTML", "CSS", "JavaScript", "SQL"],
+        techStack: JSON.stringify(["Django", "HTML", "CSS", "JavaScript", "SQL"]),
         repoUrl: "https://github.com/Khensanintulo911/Klasora",
         demoUrl: null,
         imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
@@ -111,8 +111,8 @@ export class MemStorage implements IStorage {
       phoneNumber: insertProfile.phoneNumber || null,
       email: insertProfile.email || null,
       tagline: insertProfile.tagline || null,
-      education: insertProfile.education || [],
-      skills: insertProfile.skills || []
+      education: insertProfile.education || "[]",
+      skills: insertProfile.skills || "[]"
     };
     this.profile = profile;
     return profile;
@@ -138,7 +138,7 @@ export class MemStorage implements IStorage {
     const project: Project = {
       id,
       ...insertProject,
-      techStack: insertProject.techStack || [],
+      techStack: insertProject.techStack || "[]",
       repoUrl: insertProject.repoUrl || null,
       demoUrl: insertProject.demoUrl || null,
       imageUrl: insertProject.imageUrl || null
