@@ -85,8 +85,7 @@ This system makes it easier for entrepreneurs to make informed business decision
 ### Render deployment
 - Connect your GitHub repo and create a **Web Service**.
 - **Runtime**: Node
-- **Build Command**: `npm run build` (this compiles the server into `dist` and builds the client)
-- **Start Command**: `npm start` (runs `node dist/server/index.js`)
+- **Build Command**: `npm run build` (this compiles the server into `dist` and builds the client)  - **Render tip:** If your build requires dev dependencies (TypeScript types, etc.) use `npm ci --include=dev && npm run build` or set **Build Command** to `npm run build:render` (the repo provides this helper script).- **Start Command**: `npm start` (runs `node dist/server/index.js`)
 - Make sure `DATABASE_URL` (and any other secrets) are set in Render's Environment settings.
 
 **Troubleshooting: "Cannot find module '/opt/render/project/src/dist/index.js'"**

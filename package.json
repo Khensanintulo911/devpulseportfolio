@@ -8,6 +8,7 @@
     "build:client": "vite build",
     "build": "npm run build:server && npm run build:client && npm run postbuild",
     "postbuild": "node ./scripts/fix-imports.cjs",
+    "build:render": "npm ci --include=dev && npm run build",
     "start": "node --experimental-specifier-resolution=node dist/server/index.js",
     "migrate:generate": "npx drizzle-kit generate",
     "migrate:push": "npx drizzle-kit push --config ./drizzle.config.ts",
