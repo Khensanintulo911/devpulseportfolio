@@ -25,31 +25,41 @@ export class MemStorage implements IStorage {
     this.profile = {
       id: randomUUID(),
       name: "Khensani Daniel Ntulo",
-      bio: "Aspiring professional with a unique blend of engineering background and emerging software development skills. Transitioning from Mining Engineering at Wits University to technology, focusing on building practical solutions that bridge the physical and digital worlds.",
+      bio: "Aspiring professional with a unique blend of engineering background and emerging software development skills. Experienced in designing, developing, and maintaining custom software solutions and Android applications. Currently leveling up through full-stack programs to bridge the gap between traditional engineering and modern digital solutions.",
       location: "Gauteng, Alberton 1458",
       linkedinUrl: "https://linkedin.com/in/khensani-ntulo",
-      whatsappNumber: null,
-      phoneNumber: null,
+      whatsappNumber: "27763456789",
+      phoneNumber: "+27 76 345 6789",
       email: "khensanintulo@gmail.com",
       tagline: "Aspiring Full-Stack Developer | Python • Django • JavaScript/TypeScript",
       education: JSON.stringify([
+        "Tech Bridle Foundation - Fullstack Program (10 Months, Hybrid)",
         "HyperionDev Software Engineering Bootcamp (Completed)",
         "BSc Mining Engineering (2 years) - Wits University",
         "Matric Certificate - Eden Ridge High School"
       ]),
       skills: JSON.stringify([
         "Python (Django, Flask)",
-        "JavaScript (TypeScript)",
+        "JavaScript (TypeScript, React)",
+        "Android Dev (Java, Kotlin)",
         "HTML/CSS",
-        "SQL (PostgreSQL, SQLite)",
+        "SQL (PostgreSQL, MySQL, SQLite)",
+        "Cloud Infrastructure & Security",
         "Git/GitHub",
-        "MATLAB",
-        "AutoCAD/SolidEdge"
+        "MATLAB & AutoCAD"
       ])
     };
 
     // Initialize with projects
     const initialProjects: InsertProject[] = [
+      {
+        title: "All Electronics Hub",
+        description: "A custom-designed business operations system for MM All Electronics (Samsung Repair Center). Streamlines repair tracking, internal operations, and customer-facing interfaces.",
+        techStack: JSON.stringify(["React", "TypeScript", "Python", "Cloud Infrastructure", "Database Management"]),
+        repoUrl: "https://github.com/Khensanintulo911/Khensani-Ntulo",
+        demoUrl: "https://hub.allelectronics.one/",
+        imageUrl: "https://images.unsplash.com/photo-1581092160562-40aa08e78837"
+      },
       {
         title: "VoteSphere: VoteSA",
         description: "A comprehensive web-based voting platform designed for South African political parties. Enables users to learn about political parties, engage in discussions, and cast secure votes online.",
