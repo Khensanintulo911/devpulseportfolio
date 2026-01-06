@@ -120,7 +120,12 @@ export class MemStorage implements IStorage {
 
   async updateProfile(updateProfile: UpdateProfile): Promise<Profile | undefined> {
     if (!this.profile) return undefined;
-    this.profile = { ...this.profile, ...updateProfile };
+    this.profile = { 
+      ...this.profile, 
+      ...updateProfile,
+      education: updateProfile.education ?? this.profile.education,
+      skills: updateProfile.skills ?? this.profile.skills
+    };
     return this.profile;
   }
 

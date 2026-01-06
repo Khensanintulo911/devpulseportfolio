@@ -33,6 +33,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Get projects
+  app.get("/api/projects", async (req, res) => {
+    try {
+      const projects = await storage.getProjects();
+      res.json(projects);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to get projects" });
+    }
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }

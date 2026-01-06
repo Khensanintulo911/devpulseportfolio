@@ -19,15 +19,15 @@ export const profiles = pgTable("profiles", {
   phoneNumber: text("phone_number"),
   email: text("email"),
   tagline: text("tagline"),
-  education: text("education").array(),
-  skills: text("skills").array(),
+  education: text("education", { mode: "json" }).$type<string[]>().notNull().default(sql`'[]'::jsonb`),
+  skills: text("skills", { mode: "json" }).$type<string[]>().notNull().default(sql`'[]'::jsonb`),
 });
 
 export const projects = pgTable("projects", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   title: text("title").notNull(),
   description: text("description").notNull(),
-  techStack: text("tech_stack").array(),
+  techStack: text("tech_stack", { mode: "json" }).$type<string[]>().notNull().default(sql`'[]'::jsonb`),
   repoUrl: text("repo_url"),
   demoUrl: text("demo_url"),
   imageUrl: text("image_url"),
