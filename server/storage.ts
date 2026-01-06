@@ -25,7 +25,7 @@ export class MemStorage implements IStorage {
     this.profile = {
       id: randomUUID(),
       name: "Khensani Daniel Ntulo",
-      bio: "Aspiring professional with a unique blend of engineering background and emerging software development skills. Experienced in designing, developing, and maintaining custom software solutions and Android applications. Currently leveling up through full-stack programs to bridge the gap between traditional engineering and modern digital solutions.",
+      bio: "Aspiring professional with a unique blend of engineering background and emerging software development skills. Experienced in maintaining complex business systems and developing custom solutions. Currently focused on building robust full-stack applications that solve real-world logistical and operational challenges.",
       location: "Gauteng, Alberton 1458",
       linkedinUrl: "https://linkedin.com/in/khensani-ntulo",
       whatsappNumber: "27763456789",
@@ -53,8 +53,16 @@ export class MemStorage implements IStorage {
     // Initialize with projects
     const initialProjects: InsertProject[] = [
       {
+        title: "Fleet Management System",
+        description: "Currently developing a comprehensive system to track technicians and monitor company vehicle usage. Focused on improving operational transparency and efficiency through real-time tracking and reporting.",
+        techStack: JSON.stringify(["React", "TypeScript", "Python", "Geospatial Data", "Cloud Infrastructure"]),
+        repoUrl: "https://github.com/Khensanintulo911/Khensani-Ntulo",
+        demoUrl: null,
+        imageUrl: "https://images.unsplash.com/photo-1590412200988-a436bb7050a8"
+      },
+      {
         title: "All Electronics Hub",
-        description: "A custom-designed business operations system for MM All Electronics (Samsung Repair Center). Streamlines repair tracking, internal operations, and customer-facing interfaces.",
+        description: "A custom-designed business operations system for MM All Electronics. Streamlined repair tracking and internal operations, while maintaining legacy systems to ensure 100% uptime.",
         techStack: JSON.stringify(["React", "TypeScript", "Python", "Cloud Infrastructure", "Database Management"]),
         repoUrl: "https://github.com/Khensanintulo911/Khensani-Ntulo",
         demoUrl: "https://hub.allelectronics.one/",
@@ -75,14 +83,6 @@ export class MemStorage implements IStorage {
         repoUrl: "https://github.com/Khensanintulo911/Khensani-Ntulo",
         demoUrl: null,
         imageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40"
-      },
-      {
-        title: "Klasora",
-        description: "An innovative academic platform connecting teachers and students. Features grade selection, subject management, and progress tracking.",
-        techStack: JSON.stringify(["Django", "HTML", "CSS", "JavaScript", "SQL"]),
-        repoUrl: "https://github.com/Khensanintulo911/Klasora",
-        demoUrl: null,
-        imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
       }
     ];
 

@@ -27,7 +27,7 @@ export default function AboutSection() {
       company: "MM All Electronics (Samsung Repair Center)",
       role: "Software Developer & IT Support",
       period: "Full-time, Permanent",
-      description: "Designed, developed, and maintained custom business solutions including the All Electronics Hub. Built Android applications, managed cloud infrastructure, and provided IT support."
+      description: "Maintained mission-critical business systems to ensure zero downtime. Developed and deployed custom solutions like the All Electronics Hub to streamline repair tracking and internal operations."
     }
   ];
 
