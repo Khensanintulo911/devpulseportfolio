@@ -39,7 +39,9 @@ app.use((req, res, next) => {
 (async () => {
   // load .env in development (local only)
   if (process.env.NODE_ENV !== "production") {
-    await import("dotenv/config");
+    // dynamically import dotenv and run config() so TypeScript resolves types reliably
+    const dotenv = await import("dotenv");
+    dotenv.config();
   }
   // import typed config after dotenv is loaded so .env values are available
   const { config } = await import("./config");
