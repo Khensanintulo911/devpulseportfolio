@@ -1,0 +1,41 @@
+name: Manual Migrations
+
+on:
+  workflow_dispatch:
+    inputs:
+      migration_name:
+        description: 'Name for the migration (optional, used with generate)'
+        required: false
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    env:
+      NODE_ENV: production
+      DATABASE_URL: ${{ secrets.PROD_DATABASE_URL }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Show DB env (non-secret check)
+        run: |
+          echo "DATABASE_URL present: ${DATABASE_URL?}" || true
+
+      - name: Push migrations (apply to prod DB)
+        run: |
+          # If a migration name was provided, generate it first (local edit required)
+          if [ -n "${{ github.event.inputs.migration_name }}" ]; then
+            npx drizzle-kit generate --name "${{ github.event.inputs.migration_name }}" --config ./drizzle.config.ts
+            echo "Generated migration with name '${{ github.event.inputs.migration_name }}'"
+          fi
+          # Apply migrations to the database
+          npx drizzle-kit push --config ./drizzle.config.ts

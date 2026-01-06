@@ -37,6 +37,13 @@ app.use((req, res, next) => {
 });
 
 (async () => {
+  // load .env in development (local only)
+  if (process.env.NODE_ENV !== "production") {
+    await import("dotenv/config");
+  }
+  // import typed config after dotenv is loaded so .env values are available
+  const { config } = await import("./config");
+
   const server = await registerRoutes(app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
@@ -60,12 +67,19 @@ app.use((req, res, next) => {
   // Other ports are firewalled. Default to 5000 if not specified.
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
-  const port = parseInt(process.env.PORT || '5000', 10);
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
-    log(`serving on port ${port}`);
-  });
+  const port = config.PORT;
+  // On some platforms (notably Windows) `reusePort` is not supported.
+  if (process.platform === "win32") {
+    server.listen(port, () => {
+      log(`serving on port ${port}`);
+    });
+  } else {
+    server.listen({
+      port,
+      host: "0.0.0.0",
+      reusePort: true,
+    }, () => {
+      log(`serving on port ${port}`);
+    });
+  }
 })();
