@@ -25,7 +25,7 @@ export class MemStorage implements IStorage {
     this.profile = {
       id: randomUUID(),
       name: "Khensani Daniel Ntulo",
-      bio: "Aspiring professional with a unique blend of engineering background and emerging software development skills. Experienced in maintaining complex business systems and developing custom solutions. Currently focused on building robust full-stack applications that solve real-world logistical and operational challenges.",
+      bio: "Aspiring professional with a unique blend of engineering background and emerging software development skills. Experienced in maintaining business systems and developing custom full-stack solutions. Currently focused on building robust applications using React, Express, and Python to solve real-world operational challenges.",
       location: "Gauteng, Alberton 1458",
       linkedinUrl: "https://linkedin.com/in/khensani-ntulo",
       whatsappNumber: "27763456789",
@@ -41,10 +41,9 @@ export class MemStorage implements IStorage {
       skills: JSON.stringify([
         "Python (Django, Flask)",
         "JavaScript (TypeScript, React)",
-        "Android Dev (Java, Kotlin)",
+        "Express.js & Node.js",
+        "Drizzle ORM & SQL",
         "HTML/CSS",
-        "SQL (PostgreSQL, MySQL, SQLite)",
-        "Cloud Infrastructure & Security",
         "Git/GitHub",
         "MATLAB & AutoCAD"
       ])
@@ -54,31 +53,31 @@ export class MemStorage implements IStorage {
     const initialProjects: InsertProject[] = [
       {
         title: "Fleet Management System",
-        description: "Currently developing a comprehensive system to track technicians and monitor company vehicle usage. Focused on improving operational transparency and efficiency through real-time tracking and reporting.",
-        techStack: JSON.stringify(["React", "TypeScript", "Python", "Geospatial Data", "Cloud Infrastructure"]),
+        description: "Developing a system to track technicians and monitor company vehicle usage. Focused on improving operational transparency using React, Express, and PostgreSQL.",
+        techStack: JSON.stringify(["React", "TypeScript", "Node.js", "Express", "PostgreSQL"]),
         repoUrl: "https://github.com/Khensanintulo911/Khensani-Ntulo",
         demoUrl: null,
         imageUrl: "https://images.unsplash.com/photo-1590412200988-a436bb7050a8"
       },
       {
         title: "All Electronics Hub",
-        description: "A custom-designed business operations system for MM All Electronics. Streamlined repair tracking and internal operations, while maintaining legacy systems to ensure 100% uptime.",
-        techStack: JSON.stringify(["React", "TypeScript", "Python", "Cloud Infrastructure", "Database Management"]),
+        description: "A custom business operations system for MM All Electronics. Streamlined repair tracking and internal operations using React and Python backend.",
+        techStack: JSON.stringify(["React", "Python", "Cloud Infrastructure", "PostgreSQL"]),
         repoUrl: "https://github.com/Khensanintulo911/Khensani-Ntulo",
         demoUrl: "https://hub.allelectronics.one/",
         imageUrl: "https://images.unsplash.com/photo-1581092160562-40aa08e78837"
       },
       {
         title: "VoteSphere: VoteSA",
-        description: "A comprehensive web-based voting platform designed for South African political parties. Enables users to learn about political parties, engage in discussions, and cast secure votes online.",
-        techStack: JSON.stringify(["Django", "Python", "HTML/CSS", "JavaScript", "PostgreSQL"]),
+        description: "A web-based voting platform for South African political parties. Built with Django to ensure secure voting and democratic engagement.",
+        techStack: JSON.stringify(["Django", "Python", "HTML/CSS", "PostgreSQL"]),
         repoUrl: "https://github.com/Khensanintulo911/Khensani-Ntulo",
         demoUrl: null,
         imageUrl: "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c"
       },
       {
         title: "StockTracker SA",
-        description: "An inventory management system built for small-scale businesses in South Africa. Tracks stock levels, calculates profits, flags expired goods, and identifies moving products.",
+        description: "Inventory management for small businesses. Features real-time tracking, profit calculation, and expiry alerts built with Python and Django.",
         techStack: JSON.stringify(["Python", "Django", "HTML/CSS", "SQLite"]),
         repoUrl: "https://github.com/Khensanintulo911/Khensani-Ntulo",
         demoUrl: null,

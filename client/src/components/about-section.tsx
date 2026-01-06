@@ -12,14 +12,13 @@ export default function AboutSection() {
   const education = profile?.education ? JSON.parse(profile.education) as string[] : [];
 
   const skillProficiency: Record<string, number> = {
-    "Python (Django, Flask)": 90,
-    "JavaScript (TypeScript, React)": 88,
-    "Android Dev (Java, Kotlin)": 85,
-    "HTML/CSS": 95,
-    "SQL (PostgreSQL, MySQL, SQLite)": 82,
-    "Cloud Infrastructure & Security": 75,
-    "Git/GitHub": 85,
-    "MATLAB & AutoCAD": 70
+    "Python (Django, Flask)": 75,
+    "JavaScript (TypeScript, React)": 70,
+    "Express.js & Node.js": 65,
+    "Drizzle ORM & SQL": 60,
+    "HTML/CSS": 85,
+    "Git/GitHub": 75,
+    "MATLAB & AutoCAD": 50
   };
 
   const experience = [
@@ -65,16 +64,16 @@ export default function AboutSection() {
               <div className="space-y-6">
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                   <Code className="w-6 h-6 text-primary" />
-                  Skill Proficiency
+                  Technology Skills
                 </h3>
                 <div className="space-y-4">
                   {skills.map((skill) => (
                     <div key={skill} className="space-y-2">
                       <div className="flex justify-between text-sm font-medium">
                         <span className="text-slate-700 dark:text-slate-200">{skill}</span>
-                        <span className="text-slate-500">{skillProficiency[skill] || 80}%</span>
+                        <span className="text-slate-500">{skillProficiency[skill] || 60}%</span>
                       </div>
-                      <Progress value={skillProficiency[skill] || 80} className="h-2" />
+                      <Progress value={skillProficiency[skill] || 60} className="h-2" />
                     </div>
                   ))}
                 </div>
