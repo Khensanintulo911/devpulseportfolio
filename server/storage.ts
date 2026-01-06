@@ -52,20 +52,42 @@ export class MemStorage implements IStorage {
     // Initialize with projects
     const initialProjects: InsertProject[] = [
       {
+        title: "Admin Hub",
+        description: "A custom-designed business operations system for MM All Electronics. Streamlined repair tracking and internal operations using React and Python backend.",
+        techStack: JSON.stringify(["React", "Python", "Cloud Infrastructure", "PostgreSQL"]),
+        repoUrl: "https://github.com/Khensanintulo911/Khensani-Ntulo",
+        demoUrl: "https://hub.allelectronics.one/",
+        imageUrl: "https://images.unsplash.com/photo-1581092160562-40aa08e78837",
+        specifications: JSON.stringify([
+          "Real-time repair tracking and status updates",
+          "Internal operations dashboard for technician management",
+          "Customer-facing progress portal",
+          "Secure cloud-based database management",
+          "Integrated help desk and IT support system"
+        ]),
+        images: JSON.stringify([
+          "https://images.unsplash.com/photo-1551288049-bbbda546697c",
+          "https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+        ]),
+        videoUrl: null
+      },
+      {
         title: "Fleet Management System",
         description: "Developing a system to track technicians and monitor company vehicle usage. Focused on improving operational transparency using React, Express, and PostgreSQL.",
         techStack: JSON.stringify(["React", "TypeScript", "Node.js", "Express", "PostgreSQL"]),
         repoUrl: "https://github.com/Khensanintulo911/Khensani-Ntulo",
         demoUrl: null,
-        imageUrl: "https://images.unsplash.com/photo-1590412200988-a436bb7050a8"
-      },
-      {
-        title: "All Electronics Hub",
-        description: "A custom business operations system for MM All Electronics. Streamlined repair tracking and internal operations using React and Python backend.",
-        techStack: JSON.stringify(["React", "Python", "Cloud Infrastructure", "PostgreSQL"]),
-        repoUrl: "https://github.com/Khensanintulo911/Khensani-Ntulo",
-        demoUrl: "https://hub.allelectronics.one/",
-        imageUrl: "https://images.unsplash.com/photo-1581092160562-40aa08e78837"
+        imageUrl: "https://images.unsplash.com/photo-1590412200988-a436bb7050a8",
+        specifications: JSON.stringify([
+          "Real-time GPS tracking for company vehicles",
+          "Technician assignment and status monitoring",
+          "Vehicle maintenance and fuel usage reporting",
+          "Optimized route planning for site visits"
+        ]),
+        images: JSON.stringify([
+          "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957"
+        ]),
+        videoUrl: null
       },
       {
         title: "VoteSphere: VoteSA",
@@ -73,7 +95,15 @@ export class MemStorage implements IStorage {
         techStack: JSON.stringify(["Django", "Python", "HTML/CSS", "PostgreSQL"]),
         repoUrl: "https://github.com/Khensanintulo911/Khensani-Ntulo",
         demoUrl: null,
-        imageUrl: "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c"
+        imageUrl: "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c",
+        specifications: JSON.stringify([
+          "Secure user authentication and registration",
+          "Political party profile management",
+          "Real-time voting and result visualization",
+          "Discussion forums for democratic engagement"
+        ]),
+        images: JSON.stringify([]),
+        videoUrl: null
       },
       {
         title: "StockTracker SA",
@@ -81,7 +111,15 @@ export class MemStorage implements IStorage {
         techStack: JSON.stringify(["Python", "Django", "HTML/CSS", "SQLite"]),
         repoUrl: "https://github.com/Khensanintulo911/Khensani-Ntulo",
         demoUrl: null,
-        imageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40"
+        imageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
+        specifications: JSON.stringify([
+          "Automated inventory tracking and low-stock alerts",
+          "Profit and loss reporting dashboards",
+          "Product expiry date monitoring",
+          "Sales history and fast-moving product analysis"
+        ]),
+        images: JSON.stringify([]),
+        videoUrl: null
       }
     ];
 
@@ -150,7 +188,10 @@ export class MemStorage implements IStorage {
       techStack: insertProject.techStack || "[]",
       repoUrl: insertProject.repoUrl || null,
       demoUrl: insertProject.demoUrl || null,
-      imageUrl: insertProject.imageUrl || null
+      imageUrl: insertProject.imageUrl || null,
+      specifications: insertProject.specifications || "[]",
+      images: insertProject.images || "[]",
+      videoUrl: insertProject.videoUrl || null
     };
     this.projects.set(id, project);
     return project;

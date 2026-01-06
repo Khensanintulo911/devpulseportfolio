@@ -31,6 +31,9 @@ export const projects = pgTable("projects", {
   repoUrl: text("repo_url"),
   demoUrl: text("demo_url"),
   imageUrl: text("image_url"),
+  specifications: text("specifications").notNull().default("[]"),
+  images: text("images").notNull().default("[]"),
+  videoUrl: text("video_url"),
 });
 
 export const insertUserSchema = createInsertSchema(users).pick({
