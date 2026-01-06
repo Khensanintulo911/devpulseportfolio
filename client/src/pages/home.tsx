@@ -4,24 +4,16 @@ import AboutSection from "@/components/about-section";
 import ProjectsSection from "@/components/projects-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
-import ProfileModal from "@/components/profile-modal";
-import { useState } from "react";
 
 export default function Home() {
-  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
-
   return (
-    <div className="font-inter bg-gray-50 text-gray-700">
-      <Navigation onEditProfile={() => setIsProfileModalOpen(true)} />
+    <div className="font-inter bg-white dark:bg-slate-950 text-slate-900 dark:text-white min-h-screen">
+      <Navigation />
       <HeroSection />
       <AboutSection />
       <ProjectsSection />
       <ContactSection />
       <Footer />
-      <ProfileModal 
-        isOpen={isProfileModalOpen} 
-        onClose={() => setIsProfileModalOpen(false)} 
-      />
     </div>
   );
 }
