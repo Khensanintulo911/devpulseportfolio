@@ -121,6 +121,51 @@ export default function AboutSection() {
               </div>
             </div>
           </div>
+          <div className="mt-20">
+            <h3 className="text-3xl font-bold text-center text-slate-900 dark:text-white mb-12 flex items-center justify-center gap-3">
+              <Rocket className="w-8 h-8 text-primary" />
+              Learning Journey & Progression
+            </h3>
+            <div className="relative max-w-4xl mx-auto pl-10 border-l-2 border-primary/20 space-y-12">
+              <div className="relative">
+                <div className="absolute -left-[45px] top-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center border-4 border-white dark:border-slate-950 shadow-lg">
+                  <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
+                </div>
+                <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-md border border-slate-100 dark:border-slate-700">
+                  <div className="flex justify-between items-start mb-2">
+                    <h4 className="font-bold text-slate-900 dark:text-white text-lg">Current Focus: Advanced Web Development</h4>
+                    <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full">In Progress</span>
+                  </div>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">Mastering TypeScript, React, and Express.js while documenting every commit and milestone.</p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1 bg-slate-100 dark:bg-slate-700 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300">#TypeScript</span>
+                    <span className="px-3 py-1 bg-slate-100 dark:bg-slate-700 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300">#CI/CD</span>
+                    <span className="px-3 py-1 bg-slate-100 dark:bg-slate-700 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300">#PRs</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="absolute -left-[45px] top-0 w-8 h-8 bg-slate-200 dark:bg-slate-700 rounded-full flex items-center justify-center border-4 border-white dark:border-slate-950 shadow-sm">
+                  <Code className="w-4 h-4 text-slate-500" />
+                </div>
+                <div className="bg-white/50 dark:bg-slate-800/50 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+                  <h4 className="font-bold text-slate-900 dark:text-white text-lg mb-1 text-slate-700 dark:text-slate-300">Project Launch: All Electronics Hub</h4>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm">Successfully deployed a mission-critical repair tracking system for MM All Electronics.</p>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="absolute -left-[45px] top-0 w-8 h-8 bg-slate-200 dark:bg-slate-700 rounded-full flex items-center justify-center border-4 border-white dark:border-slate-950 shadow-sm">
+                  <Briefcase className="w-4 h-4 text-slate-500" />
+                </div>
+                <div className="bg-white/50 dark:bg-slate-800/50 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+                  <h4 className="font-bold text-slate-700 dark:text-slate-300 text-lg mb-1">Career Transition: Engineering to Software</h4>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm">Leveraging Mechanical Engineering analytical skills to solve complex software problems.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
