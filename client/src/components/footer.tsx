@@ -42,7 +42,7 @@ export default function Footer() {
           
           <div className="pt-8 border-t border-slate-800 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm">
-              © {currentYear} Khensani Daniel Ntulo. Built with React & Express.
+              © {currentYear} Khensani Daniel Ntulo.
             </p>
             <p className="text-xs text-slate-500">
               Gauteng, Alberton • Remote & On-site

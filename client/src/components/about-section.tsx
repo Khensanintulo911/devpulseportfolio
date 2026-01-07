@@ -211,6 +211,33 @@ export default function AboutSection() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+            <div className="bg-gradient-to-br from-primary/5 to-primary/10 p-8 rounded-2xl border border-primary/20 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                <Rocket className="w-24 h-24 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                <Target className="w-6 h-6 text-primary" />
+                AI-First Philosophy
+              </h3>
+              <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
+                I see AI not as a threat, but as a powerful **guide and mentor** that fast-tracks my learning and enhances productivity. By utilizing advanced AI tools, I can:
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                  <div className="w-1.5 h-1.5 bg-primary rounded-full" />
+                  Fast-track technical learning and comprehension
+                </li>
+                <li className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                  <div className="w-1.5 h-1.5 bg-primary rounded-full" />
+                  Optimize and refactor code with precision
+                </li>
+                <li className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                  <div className="w-1.5 h-1.5 bg-primary rounded-full" />
+                  Bridge the gap between engineering theory and code
+                </li>
+              </ul>
+            </div>
+
             <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
               <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
                 <TrendingUp className="w-6 h-6 text-primary" />
