@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, MessageSquare, Phone } from "lucide-react";
-import profile800 from '../../../attached_assets/profile-800.webp';
-import profile400 from '../../../attached_assets/profile-400.webp';
-import profileJpg from '../../../attached_assets/profile-800.jpg';
+// using static public assets for avatar to avoid bundling/caching issues
+// avatar files are served from /assets/profile-*.webp (added to client/public/assets)
 
 export default function HeroSection() {
   return (
@@ -19,8 +18,8 @@ export default function HeroSection() {
         <div className="mb-8 relative inline-block">
           <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-primary/30 p-0 relative z-10 mx-auto overflow-hidden bg-slate-800">
             <img
-              src={profile800}
-              srcSet={`${profile400} 400w, ${profile800} 800w`}
+              src="/assets/profile-800.webp"
+              srcSet="/assets/profile-400.webp 400w, /assets/profile-800.webp 800w"
               sizes="(max-width: 640px) 400px, 800px"
               alt="Khensani 'Kay' Ntulo"
               className="w-full h-full object-cover object-top"
