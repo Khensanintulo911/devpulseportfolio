@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, MessageSquare, Phone } from "lucide-react";
-import profilePic from '../../../attached_assets/1000056003_1767776269029.jpg';
+import profile800 from '../../../attached_assets/profile-800.webp';
+import profile400 from '../../../attached_assets/profile-400.webp';
+import profileJpg from '../../../attached_assets/profile-800.jpg';
 
 export default function HeroSection() {
   return (
@@ -16,10 +18,13 @@ export default function HeroSection() {
       <div className="container relative z-20 px-4 text-center">
         <div className="mb-8 relative inline-block">
           <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-primary/30 p-0 relative z-10 mx-auto overflow-hidden bg-slate-800">
-            <img 
-              src={profilePic} 
-              alt="Khensani 'Kay' Ntulo" 
+            <img
+              src={profile800}
+              srcSet={`${profile400} 400w, ${profile800} 800w`}
+              sizes="(max-width: 640px) 400px, 800px"
+              alt="Khensani 'Kay' Ntulo"
               className="w-full h-full object-cover object-top"
+              loading="lazy"
             />
           </div>
           <div className="absolute -inset-2 bg-primary/20 rounded-full blur-xl z-0 animate-pulse" />
