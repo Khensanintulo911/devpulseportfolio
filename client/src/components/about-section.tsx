@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import type { Profile } from "@shared/schema";
-import { GraduationCap, Code, Rocket, MapPin, Briefcase } from "lucide-react";
+import { GraduationCap, Code, Rocket, MapPin, Briefcase, BarChart3, TrendingUp } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
+import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar } from 'recharts';
 
 export default function AboutSection() {
   const { data: profile } = useQuery<Profile>({
@@ -18,7 +19,7 @@ export default function AboutSection() {
     "Drizzle ORM & SQL": 60,
     "HTML/CSS": 85,
     "Git/GitHub": 75,
-    "MATLAB & AutoCAD": 50
+    "Mining Software & Data Analysis": 50
   };
 
   const experience = [
@@ -30,17 +31,35 @@ export default function AboutSection() {
     }
   ];
 
+  const learningData = [
+    { month: 'Aug', skills: 20 },
+    { month: 'Sep', skills: 35 },
+    { month: 'Oct', skills: 45 },
+    { month: 'Nov', skills: 65 },
+    { month: 'Dec', skills: 80 },
+    { month: 'Jan', skills: 95 },
+  ];
+
+  const radarData = [
+    { subject: 'Frontend', A: 85, fullMark: 100 },
+    { subject: 'Backend', A: 75, fullMark: 100 },
+    { subject: 'Database', A: 65, fullMark: 100 },
+    { subject: 'DevOps', A: 60, fullMark: 100 },
+    { subject: 'Python', A: 90, fullMark: 100 },
+    { subject: 'Analysis', A: 80, fullMark: 100 },
+  ];
+
   return (
     <section id="about" className="py-20 bg-gray-50 dark:bg-slate-900">
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-slate-900 dark:text-white mb-16">Professional Journey</h2>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-20">
             <div className="space-y-12">
               <div className="prose prose-slate dark:prose-invert lg:prose-lg">
                 <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
-                  {profile?.bio || "Aspiring professional with a unique blend of engineering background and emerging software development skills."}
+                  {profile?.bio || "Aspiring professional with a unique blend of mining engineering background and emerging software development skills."}
                 </p>
               </div>
 
@@ -82,7 +101,7 @@ export default function AboutSection() {
             
             <div className="space-y-10">
               <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
                   <GraduationCap className="w-6 h-6 text-primary" />
                   Education & Certifications
                 </h3>
@@ -96,7 +115,7 @@ export default function AboutSection() {
                     <>
                       <div className="pl-8 relative">
                         <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-primary border-4 border-white dark:border-slate-900" />
-                        <h4 className="font-bold text-slate-900 dark:text-white text-sm md:text-base">National Diploma in Mechanical Engineering</h4>
+                        <h4 className="font-bold text-slate-900 dark:text-white text-sm md:text-base">National Diploma in Mining Engineering</h4>
                         <p className="text-xs text-slate-500 uppercase tracking-wider">Tshwane University of Technology</p>
                       </div>
                       <div className="pl-8 relative">
@@ -121,6 +140,51 @@ export default function AboutSection() {
               </div>
             </div>
           </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+            <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                <TrendingUp className="w-6 h-6 text-primary" />
+                Learning Velocity
+              </h3>
+              <div className="h-[300px] w-full">
+                <ResponsiveContainer width="100%" height="100%">
+                  <AreaChart data={learningData}>
+                    <defs>
+                      <linearGradient id="colorSkills" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.3}/>
+                        <stop offset="95%" stopColor="#3b82f6" stopOpacity={0}/>
+                      </linearGradient>
+                    </defs>
+                    <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
+                    <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 12}} />
+                    <YAxis hide tick={{fill: '#64748b', fontSize: 12}} />
+                    <Tooltip 
+                      contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
+                    />
+                    <Area type="monotone" dataKey="skills" stroke="#3b82f6" strokeWidth={3} fillOpacity={1} fill="url(#colorSkills)" />
+                  </AreaChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+
+            <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                <BarChart3 className="w-6 h-6 text-primary" />
+                Skill Distribution
+              </h3>
+              <div className="h-[300px] w-full">
+                <ResponsiveContainer width="100%" height="100%">
+                  <RadarChart cx="50%" cy="50%" outerRadius="80%" data={radarData}>
+                    <PolarGrid stroke="#e2e8f0" />
+                    <PolarAngleAxis dataKey="subject" tick={{fill: '#64748b', fontSize: 12}} />
+                    <Radar name="Khensani" dataKey="A" stroke="#3b82f6" fill="#3b82f6" fillOpacity={0.5} />
+                  </RadarChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+          </div>
+
           <div className="mt-20">
             <h3 className="text-3xl font-bold text-center text-slate-900 dark:text-white mb-12 flex items-center justify-center gap-3">
               <Rocket className="w-8 h-8 text-primary" />
@@ -136,7 +200,7 @@ export default function AboutSection() {
                     <h4 className="font-bold text-slate-900 dark:text-white text-lg">Current Focus: Advanced Web Development</h4>
                     <span className="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full">In Progress</span>
                   </div>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">Mastering TypeScript, React, and Express.js while documenting every commit and milestone.</p>
+                  <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">Mastering TypeScript, React, and Express.js while documenting every commit and milestone.</p>
                   <div className="flex flex-wrap gap-2">
                     <span className="px-3 py-1 bg-slate-100 dark:bg-slate-700 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300">#TypeScript</span>
                     <span className="px-3 py-1 bg-slate-100 dark:bg-slate-700 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300">#CI/CD</span>
@@ -160,8 +224,8 @@ export default function AboutSection() {
                   <Briefcase className="w-4 h-4 text-slate-500" />
                 </div>
                 <div className="bg-white/50 dark:bg-slate-800/50 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
-                  <h4 className="font-bold text-slate-700 dark:text-slate-300 text-lg mb-1">Career Transition: Engineering to Software</h4>
-                  <p className="text-slate-500 dark:text-slate-400 text-sm">Leveraging Mechanical Engineering analytical skills to solve complex software problems.</p>
+                  <h4 className="font-bold text-slate-700 dark:text-slate-300 text-lg mb-1">Career Transition: Mining to Software</h4>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm">Leveraging Mining Engineering analytical skills to solve complex software problems.</p>
                 </div>
               </div>
             </div>
