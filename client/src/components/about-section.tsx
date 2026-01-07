@@ -178,7 +178,7 @@ export default function AboutSection() {
                   <RadarChart cx="50%" cy="50%" outerRadius="80%" data={radarData}>
                     <PolarGrid stroke="#e2e8f0" />
                     <PolarAngleAxis dataKey="subject" tick={{fill: '#64748b', fontSize: 12}} />
-                    <Radar name="Khensani" dataKey="A" stroke="#3b82f6" fill="#3b82f6" fillOpacity={0.5} />
+                    <Radar name="Kay" dataKey="A" stroke="#3b82f6" fill="#3b82f6" fillOpacity={0.5} />
                   </RadarChart>
                 </ResponsiveContainer>
               </div>

@@ -18,7 +18,7 @@ export default function HeroSection() {
         </div>
         
         <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
-          Hi, I'm <span className="text-primary bg-clip-text">Khensani Daniel Ntulo</span> 👋
+          Hi, I'm <span className="text-primary bg-clip-text">Khensani "Kay"</span> 👋
         </h1>
         
         <p className="text-xl md:text-2xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
