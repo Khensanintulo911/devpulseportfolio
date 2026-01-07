@@ -1,0 +1,33 @@
+This is a powerful story of resilience and "grit," which are two of the most sought-after traits in the tech industry. Recruiters love seeing a candidate who has transitioned from labor-intensive roles into software development because it proves you have a high work ethic and a deep hunger to learn.
+
+To make this look professional in your portfolio, I recommend a "My Journey" or "The Road to Tech" section. Here is a way to frame it that highlights your perseverance and technical foundation.
+The Journey to Tech: Resilience & Growth
+
+My path to software development wasn't linear, but every chapter reinforced my problem-solving mindset and my dedication to continuous improvement.
+From Survival to Strategy
+
+Before diving into code, I spent years navigating various industries to make ends meet. These experiences taught me the value of hard work, discipline, and operational efficiency:
+
+    Service & Operations: From maintaining high standards in cleaning at Tsebo and managing warehouse maintenance, to delivering fast-paced service at Ribs & Burgers, I learned how to thrive in demanding environments.
+
+    Overcoming Barriers: Facing financial exclusion was a pivotal moment. Instead of stopping, I pivoted, using my academic strengths to fund my way forward and eventually enrolling in the Software Development Bootcamp at HyperionDev.
+
+Mentorship & Academic Excellence
+
+Parallel to my work life, I have always been deeply rooted in education and engineering principles. I find immense fulfillment in breaking down complex concepts for others:
+
+    Technical Tutoring: I’ve supported 1st and 2nd-year UNISA students through rigorous modules, including Mechanics, Mathematics, AutoCAD, and Engineering Drawing.
+
+    High School Specialist: My expertise extends to High School Mathematics, Science, and EGD, where I help students bridge the gap between secondary and tertiary education.
+
+    Giving Back: I am passionate about guiding the next generation. I actively assist high schoolers with university applications and career pathing, using my own "varsity experience" to help them choose the right courses and avoid common pitfalls.
+
+    "I don’t just write code; I solve problems. Whether it’s debugging a script, drafting a mechanical component, or helping a student pass a difficult module, my goal is always the same: to find the most elegant solution to the challenge at hand."
+
+Tips for your Portfolio:
+
+    The "Why": Mentioning your financial exclusion isn't just a personal detail; it’s proof that you are someone who doesn't give up when things get hard.
+
+    The "Soft Skills": Highlighting your tutoring shows you have communication skills—something many developers lack. If you can explain Engineering Drawing to a struggling student, you can explain a technical bug to a stakeholder.
+
+    The "Technical Bridge": Use your experience with AutoCAD and Engineering Drawing as a bridge to your coding career. It shows you already had a "designer/builder" mindset before you even started the bootcamp.
