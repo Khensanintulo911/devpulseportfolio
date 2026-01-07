@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, MessageSquare, Phone } from "lucide-react";
+import kayImage from '@assets/generated_images/professional_male_developer_portrait_photo.png';
 
 export default function HeroSection() {
   return (
@@ -13,6 +14,17 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-slate-900/80 to-slate-900 z-10" />
       
       <div className="container relative z-20 px-4 text-center">
+        <div className="mb-8 relative inline-block">
+          <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-primary/30 p-1 relative z-10 mx-auto overflow-hidden">
+            <img 
+              src={kayImage} 
+              alt="Khensani 'Kay' Ntulo" 
+              className="w-full h-full object-cover rounded-full"
+            />
+          </div>
+          <div className="absolute -inset-2 bg-primary/20 rounded-full blur-xl z-0 animate-pulse" />
+        </div>
+
         <div className="inline-block px-4 py-1.5 mb-6 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm font-bold tracking-wider uppercase animate-fade-in">
           Available for Opportunities
         </div>
