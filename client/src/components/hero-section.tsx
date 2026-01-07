@@ -15,11 +15,11 @@ export default function HeroSection() {
       
       <div className="container relative z-20 px-4 text-center">
         <div className="mb-8 relative inline-block">
-          <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-primary/30 p-1 relative z-10 mx-auto overflow-hidden bg-slate-800">
+          <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-primary/30 p-0 relative z-10 mx-auto overflow-hidden bg-slate-800">
             <img 
               src={profilePic} 
               alt="Khensani 'Kay' Ntulo" 
-              className="w-full h-full object-cover rounded-full"
+              className="w-full h-full object-cover object-top"
             />
           </div>
           <div className="absolute -inset-2 bg-primary/20 rounded-full blur-xl z-0 animate-pulse" />
