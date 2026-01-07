@@ -32,11 +32,14 @@ export default function HeroSection() {
         </p>
         
         <div className="flex flex-wrap justify-center gap-4 mb-16">
-          <Button asChild size="lg" className="rounded-2xl h-12 px-8 font-bold shadow-lg shadow-primary/20">
+          <Button asChild size="lg" className="rounded-2xl h-12 px-8 font-bold shadow-lg shadow-primary/20 animate-bounce">
             <a href="#projects">Explore Work</a>
           </Button>
           <Button asChild variant="outline" size="lg" className="rounded-2xl h-12 px-8 bg-white/5 backdrop-blur-md border-white/10 hover:bg-white/10 font-bold">
             <a href="#contact">Get in Touch</a>
+          </Button>
+          <Button asChild variant="secondary" size="lg" className="rounded-2xl h-12 px-8 font-bold">
+            <a href="/resume.pdf" target="_blank">Download CV</a>
           </Button>
         </div>
 

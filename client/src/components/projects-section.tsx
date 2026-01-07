@@ -13,7 +13,30 @@ export default function ProjectsSection() {
     queryKey: ['/api/projects'],
   });
 
-  if (isLoading) {
+  const placeholderProjects = [
+    {
+      id: 1,
+      title: "All Electronics Hub",
+      description: "A mission-critical repair tracking system built for MM All Electronics (Samsung Repair Center).",
+      techStack: JSON.stringify(["Python", "Django", "PostgreSQL"]),
+      imageUrl: "https://images.unsplash.com/photo-1581092160562-40aa08e78837",
+      repoUrl: "#",
+      demoUrl: "#"
+    },
+    {
+      id: 2,
+      title: "Portfolio Website",
+      description: "A modern, responsive portfolio showcasing my engineering background and software skills.",
+      techStack: JSON.stringify(["React", "TypeScript", "Tailwind CSS"]),
+      imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+      repoUrl: "#",
+      demoUrl: "#"
+    }
+  ];
+
+  const displayProjects = projects?.length ? projects : placeholderProjects;
+
+  if (isLoading && !projects) {
     return (
       <section id="projects" className="py-20 bg-white dark:bg-slate-950">
         <div className="container mx-auto px-6 text-center">
@@ -38,7 +61,7 @@ export default function ProjectsSection() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects?.map((project) => {
+            {displayProjects.map((project) => {
               const techStack = project.techStack ? JSON.parse(project.techStack) as string[] : [];
               const specifications = project.specifications ? JSON.parse(project.specifications) as string[] : [];
               const images = project.images ? JSON.parse(project.images) as string[] : [];

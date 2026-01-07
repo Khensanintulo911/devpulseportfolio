@@ -67,7 +67,7 @@ export default function AboutSection() {
                   Technology Skills
                 </h3>
                 <div className="space-y-4">
-                  {skills.map((skill) => (
+                  {(skills.length > 0 ? skills : Object.keys(skillProficiency)).map((skill) => (
                     <div key={skill} className="space-y-2">
                       <div className="flex justify-between text-sm font-medium">
                         <span className="text-slate-700 dark:text-slate-200">{skill}</span>
@@ -82,17 +82,30 @@ export default function AboutSection() {
             
             <div className="space-y-10">
               <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                   <GraduationCap className="w-6 h-6 text-primary" />
                   Education & Certifications
                 </h3>
                 <div className="space-y-6 relative before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-slate-200 dark:before:bg-slate-700">
-                  {education.map((item, idx) => (
+                  {education.length > 0 ? education.map((item, idx) => (
                     <div key={idx} className="pl-8 relative">
                       <div className={`absolute left-0 top-1.5 w-4 h-4 rounded-full ${idx === 0 ? 'bg-primary' : 'bg-slate-300 dark:bg-slate-600'} border-4 border-white dark:border-slate-900`} />
                       <h4 className="font-bold text-slate-900 dark:text-white text-sm md:text-base">{item}</h4>
                     </div>
-                  ))}
+                  )) : (
+                    <>
+                      <div className="pl-8 relative">
+                        <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-primary border-4 border-white dark:border-slate-900" />
+                        <h4 className="font-bold text-slate-900 dark:text-white text-sm md:text-base">National Diploma in Mechanical Engineering</h4>
+                        <p className="text-xs text-slate-500 uppercase tracking-wider">Tshwane University of Technology</p>
+                      </div>
+                      <div className="pl-8 relative">
+                        <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-600 border-4 border-white dark:border-slate-900" />
+                        <h4 className="font-bold text-slate-900 dark:text-white text-sm md:text-base">Software Development Fundamentals</h4>
+                        <p className="text-xs text-slate-500 uppercase tracking-wider">Self-Taught / Various Certifications</p>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
 
