@@ -30,10 +30,10 @@ export default function Footer() {
                 <a href="https://linkedin.com/in/khensani-ntulo" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center hover:bg-primary hover:text-white transition-all">
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="https://wa.me/27763456789" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                <a href="https://wa.me/27834913597" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center hover:bg-primary hover:text-white transition-all">
                   <MessageSquare className="w-5 h-5" />
                 </a>
-                <a href="mailto:khensanintulo@gmail.com" className="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                <a href="mailto:danielntulo@gmail.com" className="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center hover:bg-primary hover:text-white transition-all">
                   <Mail className="w-5 h-5" />
                 </a>
               </div>
