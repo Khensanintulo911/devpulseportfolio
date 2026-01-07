@@ -117,18 +117,9 @@ export default function AboutSection() {
                       </div>
                     ))
                   ) : (
-                    <>
-                      <div className="pl-8 relative">
-                        <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-primary border-4 border-white dark:border-slate-900 shadow-sm" />
-                        <h4 className="font-bold text-slate-900 dark:text-white text-sm md:text-base">Software Development Bootcamp</h4>
-                        <p className="text-xs text-slate-500 uppercase tracking-wider font-semibold">HyperionDev</p>
-                      </div>
-                      <div className="pl-8 relative">
-                        <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-600 border-4 border-white dark:border-slate-900" />
-                        <h4 className="font-bold text-slate-900 dark:text-white text-sm md:text-base">National Diploma in Mining Engineering</h4>
-                        <p className="text-xs text-slate-500 uppercase tracking-wider">Tshwane University of Technology</p>
-                      </div>
-                    </>
+                    <div className="pl-8">
+                      <p className="text-xs text-slate-500">Loading education…</p>
+                    </div>
                   )}
                 </div>
               </div>
