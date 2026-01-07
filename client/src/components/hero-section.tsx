@@ -16,7 +16,7 @@ export default function HeroSection() {
         <div className="mb-8 relative inline-block">
           <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-primary/30 p-1 relative z-10 mx-auto overflow-hidden bg-slate-800">
             <img 
-              src="/attached_assets/generated_images/professional_male_developer_portrait_photo.png" 
+              src="/attached_assets/1000056003_1767776269029.jpg" 
               alt="Khensani 'Kay' Ntulo" 
               className="w-full h-full object-cover rounded-full"
             />
