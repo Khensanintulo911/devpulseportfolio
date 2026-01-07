@@ -22,13 +22,9 @@ export default function HeroSection() {
         </h1>
         
         <p className="text-xl md:text-2xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-          Aspiring Full-Stack Developer 🚀
+          DevPulse is my personal mission to showcase my journey as a young and upcoming developer, documenting everything I learn as I grow. More than just a portfolio, it represents my willingness to be part of something greater and life-changing. 🚀
           <br />
-          <span className="text-slate-400 font-medium">Python • Django • JavaScript/TypeScript</span>
-          <br />
-          <span className="text-lg text-slate-500 mt-4 block italic font-light">
-            "Every bug fixed is a step forward!"
-          </span>
+          <span className="text-slate-400 font-medium mt-4 block">Python • Django • JavaScript/TypeScript</span>
         </p>
         
         <div className="flex flex-wrap justify-center gap-4 mb-16">
@@ -36,7 +32,7 @@ export default function HeroSection() {
             <a href="#projects">Explore Work</a>
           </Button>
           <Button asChild variant="outline" size="lg" className="rounded-2xl h-12 px-8 bg-white/5 backdrop-blur-md border-white/10 hover:bg-white/10 font-bold">
-            <a href="#contact">Get in Touch</a>
+            <a href="#contact">Collaborate With Me</a>
           </Button>
           <Button asChild variant="secondary" size="lg" className="rounded-2xl h-12 px-8 font-bold">
             <a href="/resume.pdf" target="_blank">Download CV</a>
@@ -52,12 +48,15 @@ export default function HeroSection() {
             className="flex items-center gap-2 text-slate-400 hover:text-white transition-all hover:translate-y-[-2px]" data-testid="link-linkedin">
             <Linkedin className="w-5 h-5" /> <span className="hidden sm:inline font-medium">LinkedIn</span>
           </a>
-          <a href="https://wa.me/27763456789" target="_blank" rel="noopener noreferrer" 
+          <a href="https://wa.me/27834913597" target="_blank" rel="noopener noreferrer" 
             className="flex items-center gap-2 text-slate-400 hover:text-white transition-all hover:translate-y-[-2px]" data-testid="link-whatsapp">
             <MessageSquare className="w-5 h-5" /> <span className="hidden sm:inline font-medium">WhatsApp</span>
           </a>
-          <a href="tel:+27763456789" className="flex items-center gap-2 text-slate-400 hover:text-white transition-all hover:translate-y-[-2px]" data-testid="link-phone">
-            <Phone className="w-5 h-5" /> <span className="hidden sm:inline font-medium">Call Me</span>
+          <a href="tel:+27834913597" className="flex items-center gap-2 text-slate-400 hover:text-white transition-all hover:translate-y-[-2px]" data-testid="link-phone">
+            <Phone className="w-5 h-5" /> <span className="hidden sm:inline font-medium">083 491 3597</span>
+          </a>
+          <a href="mailto:danielntulo@gmail.com" className="flex items-center gap-2 text-slate-400 hover:text-white transition-all hover:translate-y-[-2px]" data-testid="link-email">
+            <Mail className="w-5 h-5" /> <span className="hidden sm:inline font-medium">danielntulo@gmail.com</span>
           </a>
         </div>
       </div>

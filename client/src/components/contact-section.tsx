@@ -55,8 +55,8 @@ export default function ContactSection() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">Let's Connect</h2>
             <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Ready to collaborate on innovative solutions? Whether it's engineering software, 
-              full-stack development, or technical consulting, I'm just a click away.
+              I'm always open to new opportunities, whether it's a collaboration on a life-changing project or a potential job opportunity. 
+              Let's build something great together!
             </p>
           </div>
 
@@ -64,13 +64,13 @@ export default function ContactSection() {
             <Card className="hover-elevate transition-all duration-300">
               <CardContent className="p-8 text-center">
                 <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <Linkedin className="w-7 h-7" />
+                  <Mail className="w-7 h-7" />
                 </div>
-                <h3 className="font-bold text-lg mb-2">LinkedIn</h3>
-                <p className="text-slate-500 dark:text-slate-400 text-sm mb-6">Professional networking</p>
+                <h3 className="font-bold text-lg mb-2">Email</h3>
+                <p className="text-slate-500 dark:text-slate-400 text-sm mb-6">danielntulo@gmail.com</p>
                 <Button asChild variant="outline" className="w-full rounded-xl">
-                  <a href={formatContactLink('linkedin', profile?.linkedinUrl)} target="_blank" rel="noopener noreferrer">
-                    Connect
+                  <a href="mailto:danielntulo@gmail.com">
+                    Email Me
                   </a>
                 </Button>
               </CardContent>
@@ -82,9 +82,9 @@ export default function ContactSection() {
                   <MessageSquare className="w-7 h-7" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">WhatsApp</h3>
-                <p className="text-slate-500 dark:text-slate-400 text-sm mb-6">Quick messaging</p>
+                <p className="text-slate-500 dark:text-slate-400 text-sm mb-6">083 491 3597</p>
                 <Button asChild className="w-full rounded-xl">
-                  <a href={formatContactLink('whatsapp', profile?.whatsappNumber || "27763456789")} target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/27834913597" target="_blank" rel="noopener noreferrer">
                     Send Message
                   </a>
                 </Button>
@@ -99,7 +99,7 @@ export default function ContactSection() {
                 <h3 className="font-bold text-lg mb-2">Phone Call</h3>
                 <p className="text-slate-500 dark:text-slate-400 text-sm mb-6">Direct conversation</p>
                 <Button asChild variant="outline" className="w-full rounded-xl">
-                  <a href={formatContactLink('phone', profile?.phoneNumber || "+27 76 345 6789")}>
+                  <a href="tel:+27834913597">
                     Call Now
                   </a>
                 </Button>
@@ -116,13 +116,13 @@ export default function ContactSection() {
                     <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center">
                       <Mail className="w-5 h-5" />
                     </div>
-                    <span>{profile?.email || 'khensanintulo@gmail.com'}</span>
+                    <span>danielntulo@gmail.com</span>
                   </div>
                   <div className="flex items-center gap-4">
                     <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center">
-                      <MapPin className="w-5 h-5" />
+                      <Phone className="w-5 h-5" />
                     </div>
-                    <span>{profile?.location || 'Gauteng, South Africa'}</span>
+                    <span>083 491 3597</span>
                   </div>
                 </div>
 
