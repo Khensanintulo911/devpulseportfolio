@@ -33,9 +33,9 @@ export class MemStorage implements IStorage {
       email: "khensanintulo@gmail.com",
       tagline: "Aspiring Full-Stack Developer | Python • Django • JavaScript/TypeScript",
       education: JSON.stringify([
-        "Tech Bridle Foundation - Fullstack Program (10 Months, Hybrid)",
+        "TechBridle Foundation - Full-Stack Development Program (Enrolled)",
         "HyperionDev Software Engineering Bootcamp (Completed)",
-        "BSc Mining Engineering (2 years) - Wits University",
+        "BSc Mining (2 years) - University of the Witwatersrand (financially excluded)",
         "Matric Certificate - Eden Ridge High School"
       ]),
       skills: JSON.stringify([
