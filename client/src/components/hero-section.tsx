@@ -22,7 +22,8 @@ export default function HeroSection() {
               srcSet="/assets/profile-400.webp 400w, /assets/profile-800.webp 800w"
               sizes="(max-width: 640px) 400px, 800px"
               alt="Khensani 'Kay' Ntulo"
-              className="w-full h-full object-cover object-top"
+              style={{ objectPosition: '50% 18%' }}
+              className="w-full h-full object-cover"
               loading="lazy"
             />
           </div>
