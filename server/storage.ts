@@ -72,24 +72,6 @@ export class MemStorage implements IStorage {
         videoUrl: null
       },
       {
-        title: "Fleet Management System",
-        description: "Developing a system to track technicians and monitor company vehicle usage. Focused on improving operational transparency using React, Express, and PostgreSQL.",
-        techStack: JSON.stringify(["React", "TypeScript", "Node.js", "Express", "PostgreSQL"]),
-        repoUrl: "https://github.com/Khensanintulo911/Khensani-Ntulo",
-        demoUrl: null,
-        imageUrl: "https://images.unsplash.com/photo-1590412200988-a436bb7050a8",
-        specifications: JSON.stringify([
-          "Real-time GPS tracking for company vehicles",
-          "Technician assignment and status monitoring",
-          "Vehicle maintenance and fuel usage reporting",
-          "Optimized route planning for site visits"
-        ]),
-        images: JSON.stringify([
-          "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957"
-        ]),
-        videoUrl: null
-      },
-      {
         title: "VoteSphere: VoteSA",
         description: "A web-based voting platform for South African political parties. Built with Django to ensure secure voting and democratic engagement.",
         techStack: JSON.stringify(["Django", "Python", "HTML/CSS", "PostgreSQL"]),
