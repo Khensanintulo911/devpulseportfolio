@@ -120,6 +120,50 @@ export class MemStorage implements IStorage {
         ]),
         images: JSON.stringify([]),
         videoUrl: null
+      },
+      {
+        title: "LTP Analysis Dashboard",
+        description: "Streamlit-based web application for analyzing Long Time Pending (LTP) appliances in repair shops. MVP complete with CSV/Excel upload, automatic LTP detection with category-specific thresholds, and interactive visualizations.",
+        techStack: JSON.stringify(["Python", "Streamlit", "Pandas", "Plotly", "Data Analysis"]),
+        repoUrl: "https://github.com/Khensanintulo911/LTP-Analysis-Dashboard",
+        demoUrl: "https://ltp-analysis-dashboard.onrender.com/",
+        imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978",
+        specifications: JSON.stringify([
+          "CSV/Excel upload functionality for repair shop data",
+          "Automatic LTP detection with category-specific time thresholds",
+          "Support for multiple appliance types (phones, fridges, washing machines, etc.)",
+          "Interactive Plotly visualizations and charts",
+          "Filterable data tables for detailed analysis",
+          "Stateless mode with session-based data uploads"
+        ]),
+        images: JSON.stringify([
+          "https://images.unsplash.com/photo-1551288049-bbbda546697c"
+        ]),
+        videoUrl: null
+      },
+      {
+        title: "FleetPro",
+        description: "Comprehensive fleet management system for tracking vehicles, drivers, trips, jobs, and vehicle inspections with real-time GPS tracking, analytics, and compliance monitoring.",
+        techStack: JSON.stringify(["React", "TypeScript", "Vite", "Express.js", "Node.js", "PostgreSQL", "Drizzle ORM", "Tailwind CSS"]),
+        repoUrl: "https://github.com/Khensanintulo911/devpulsefleetpro",
+        demoUrl: "https://devpulsefleetpro.onrender.com",
+        imageUrl: "https://images.unsplash.com/photo-1590412200988-a436bb7050a8",
+        specifications: JSON.stringify([
+          "User authentication with role-based access control (admin, manager, driver, technician)",
+          "Real-time GPS tracking and route visualization with Leaflet.js",
+          "Vehicle management, driver profiles, and job assignment",
+          "Trip management with event logging (delays, fuel stops, incidents, photos)",
+          "Daily vehicle inspection workflows with 4-photo documentation",
+          "Fuel consumption and odometer tracking",
+          "Printable trip sheet generation (HTML for browser print-to-PDF)",
+          "Google Maps and Waze navigation integration",
+          "Analytics dashboard with performance metrics"
+        ]),
+        images: JSON.stringify([
+          "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957",
+          "https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+        ]),
+        videoUrl: null
       }
     ];
 
