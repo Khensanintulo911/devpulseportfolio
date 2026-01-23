@@ -57,7 +57,7 @@ export class MemStorage implements IStorage {
         techStack: JSON.stringify(["React", "Python", "Cloud Infrastructure", "PostgreSQL"]),
         repoUrl: "https://github.com/Khensanintulo911/Khensani-Ntulo",
         demoUrl: "https://hub.allelectronics.one/",
-        imageUrl: "https://images.unsplash.com/photo-1581092160562-40aa08e78837",
+        imageUrl: "/project-images/adminhub pics (1).png",
         specifications: JSON.stringify([
           "Real-time repair tracking and status updates",
           "Internal operations dashboard for technician management",
@@ -66,8 +66,13 @@ export class MemStorage implements IStorage {
           "Integrated help desk and IT support system"
         ]),
         images: JSON.stringify([
-          "https://images.unsplash.com/photo-1551288049-bbbda546697c",
-          "https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+          "/project-images/adminhub pics (1).png",
+          "/project-images/adminhub pics (2).png",
+          "/project-images/adminhub pics (3).png",
+          "/project-images/adminhub pics (4).png",
+          "/project-images/adminhub pics (5).png",
+          "/project-images/adminhub pics (6).png",
+          "/project-images/adminhub pics (7).png"
         ]),
         videoUrl: null
       },
