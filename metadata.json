@@ -1,0 +1,8 @@
+{
+  "name": "DevPulse Portfolio",
+  "description": "Portfolio of Khensani Daniel Ntulo — Full-Stack Developer & Data Science Practitioner specializing in Power BI, Advanced Spreadsheets, React & Python.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

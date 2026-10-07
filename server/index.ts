@@ -69,19 +69,8 @@ app.use((req, res, next) => {
   // Other ports are firewalled. Default to 5000 if not specified.
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
-  const port = config.PORT;
-  // On some platforms (notably Windows) `reusePort` is not supported.
-  if (process.platform === "win32") {
-    server.listen(port, () => {
-      log(`serving on port ${port}`);
-    });
-  } else {
-    server.listen({
-      port,
-      host: "0.0.0.0",
-      reusePort: true,
-    }, () => {
-      log(`serving on port ${port}`);
-    });
-  }
+  const port = Number(process.env.PORT) || config.PORT || 3000;
+  server.listen(port, "0.0.0.0", () => {
+    log(`serving on port ${port}`);
+  });
 })();
