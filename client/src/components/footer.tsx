@@ -14,7 +14,7 @@ export default function Footer() {
           {/* Brand & Identity */}
           <div className="md:col-span-6 space-y-3">
             <h3 className="text-white font-bold text-lg tracking-tight">
-              Khensani Daniel Ntulo
+              Khensani Ntulo
             </h3>
             <p className="text-xs md:text-sm text-slate-400 max-w-md leading-relaxed">
               Full-Stack Developer with a Mining Engineering background from the University of the Witwatersrand. Building reliable, high-performance web systems and solving real-world operational problems.
@@ -116,7 +116,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>© {currentYear} Khensani Daniel Ntulo. All rights reserved.</p>
+          <p>© {currentYear} Khensani Ntulo. All rights reserved.</p>
           <button
             onClick={scrollToTop}
             className="flex items-center gap-1.5 hover:text-slate-300 transition-colors cursor-pointer"

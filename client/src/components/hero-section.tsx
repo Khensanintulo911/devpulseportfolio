@@ -52,7 +52,7 @@ export default function HeroSection({ onOpenCvModal }: HeroSectionProps) {
                 <span className="text-blue-600 dark:text-blue-400">Data & Full-Stack Execution.</span>
               </h1>
               <p className="text-lg md:text-xl font-medium text-slate-700 dark:text-slate-300">
-                I'm <span className="text-slate-900 dark:text-white font-bold">Khensani Daniel Ntulo</span> ("Kay") — bridging mining engineering problem-solving with full-stack software development and enterprise data science.
+                I'm <span className="text-slate-900 dark:text-white font-bold">Khensani Ntulo</span> ("Kay") — bridging mining engineering problem-solving with full-stack software development and enterprise data science.
               </p>
             </div>
 
@@ -150,7 +150,7 @@ export default function HeroSection({ onOpenCvModal }: HeroSectionProps) {
                     src="/assets/profile-800.webp"
                     srcSet="/assets/profile-400.webp 400w, /assets/profile-800.webp 800w"
                     sizes="(max-width: 640px) 400px, 800px"
-                    alt="Khensani Daniel Ntulo"
+                    alt="Khensani Ntulo"
                     className="w-full h-full object-cover object-top filter contrast-[1.03]"
                     loading="eager"
                   />

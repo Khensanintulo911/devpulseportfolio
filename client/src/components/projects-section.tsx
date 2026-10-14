@@ -1,10 +1,36 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import type { Project } from "@shared/schema";
-import { ExternalLink, Github, ChevronRight, Layers, LayoutList, Image as ImageIcon, CheckCircle2, ShieldCheck } from "lucide-react";
+import { 
+  ExternalLink, 
+  Github, 
+  ChevronRight, 
+  Layers, 
+  LayoutList, 
+  Image as ImageIcon, 
+  CheckCircle2, 
+  GitBranch,
+  Terminal,
+  ArrowUpRight,
+  Code2
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
+
+// Helper to extract clean repo name from URL
+function getRepoName(url?: string | null): string {
+  if (!url) return "";
+  try {
+    const parts = url.replace(/\/$/, "").split("/");
+    if (parts.length >= 2) {
+      return `${parts[parts.length - 2]}/${parts[parts.length - 1]}`;
+    }
+  } catch {
+    // fallback
+  }
+  return "GitHub Repo";
+}
 
 export default function ProjectsSection() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
@@ -18,9 +44,17 @@ export default function ProjectsSection() {
   const filteredProjects = (projects || []).filter((project) => {
     if (selectedCategory === "all") return true;
     const tech = (project.techStack || "").toLowerCase();
-    if (selectedCategory === "fullstack") return tech.includes("react") || tech.includes("express") || tech.includes("node");
-    if (selectedCategory === "python") return tech.includes("python") || tech.includes("django");
-    if (selectedCategory === "data") return tech.includes("power bi") || tech.includes("excel") || tech.includes("spreadsheets") || tech.includes("data") || tech.includes("analytics") || tech.includes("streamlit");
+    const repo = (project.repoUrl || "").toLowerCase();
+    if (selectedCategory === "github") return Boolean(project.repoUrl);
+    if (selectedCategory === "fullstack") {
+      return tech.includes("react") || tech.includes("express") || tech.includes("node") || tech.includes("typescript");
+    }
+    if (selectedCategory === "python") {
+      return tech.includes("python") || tech.includes("django");
+    }
+    if (selectedCategory === "data") {
+      return tech.includes("power bi") || tech.includes("excel") || tech.includes("spreadsheets") || tech.includes("analytics") || tech.includes("streamlit");
+    }
     return true;
   });
 
@@ -28,62 +62,106 @@ export default function ProjectsSection() {
     <section id="projects" className="py-24 bg-slate-50/70 dark:bg-slate-900/50 border-t border-slate-200/60 dark:border-slate-800/60">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 gap-6">
           <div>
-            <div className="text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-2">
-              Featured Case Studies & Software
+            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-2">
+              <Code2 className="w-4 h-4" />
+              <span>Production Systems & GitHub Repositories</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
-              Production Engineering & Live Systems
+              Engineering Projects & Codebases
             </h2>
             <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mt-2 max-w-2xl">
-              Real-world systems engineered to solve operational bottlenecks, track complex assets, and automate manual business operations.
+              Real-world systems engineered to solve operational bottlenecks, track logistics, automate manual reporting, and manage human resources.
             </p>
           </div>
 
-          {/* Interactive Filter Controls */}
-          <div className="flex items-center gap-1.5 p-1 bg-white dark:bg-slate-800/90 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm self-start md:self-auto overflow-x-auto max-w-full">
-            <button
-              onClick={() => setSelectedCategory("all")}
-              className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors whitespace-nowrap cursor-pointer ${
-                selectedCategory === "all"
-                  ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-sm"
-                  : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
-              }`}
+          {/* GitHub Profile Callout Box */}
+          <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm self-start lg:self-auto">
+            <div className="w-10 h-10 rounded-xl bg-slate-900 dark:bg-slate-950 flex items-center justify-center text-white shrink-0">
+              <Github className="w-5 h-5" />
+            </div>
+            <div className="text-xs">
+              <div className="font-semibold text-slate-900 dark:text-white flex items-center gap-1.5">
+                <span>GitHub Profile</span>
+                <span className="inline-block w-2 h-2 rounded-full bg-emerald-500" title="Active Repositories" />
+              </div>
+              <a 
+                href="https://github.com/Khensanintulo911" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-600 dark:text-blue-400 font-mono hover:underline inline-flex items-center gap-1 mt-0.5"
+              >
+                <span>@Khensanintulo911</span>
+                <ArrowUpRight className="w-3 h-3" />
+              </a>
+            </div>
+            <Button
+              asChild
+              size="sm"
+              variant="outline"
+              className="ml-2 rounded-xl text-xs font-medium border-slate-300 dark:border-slate-700"
             >
-              All Systems ({projects?.length || 5})
-            </button>
-            <button
-              onClick={() => setSelectedCategory("fullstack")}
-              className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors whitespace-nowrap cursor-pointer ${
-                selectedCategory === "fullstack"
-                  ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-sm"
-                  : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
-              }`}
-            >
-              Full-Stack & Cloud
-            </button>
-            <button
-              onClick={() => setSelectedCategory("python")}
-              className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors whitespace-nowrap cursor-pointer ${
-                selectedCategory === "python"
-                  ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-sm"
-                  : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
-              }`}
-            >
-              Python & Django
-            </button>
-            <button
-              onClick={() => setSelectedCategory("data")}
-              className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors whitespace-nowrap cursor-pointer ${
-                selectedCategory === "data"
-                  ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-sm"
-                  : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
-              }`}
-            >
-              Power BI & Analytics
-            </button>
+              <a href="https://github.com/Khensanintulo911?tab=repositories" target="_blank" rel="noopener noreferrer">
+                <span>All Repos</span>
+              </a>
+            </Button>
           </div>
+        </div>
+
+        {/* Interactive Filter Controls */}
+        <div className="flex items-center gap-1.5 p-1 bg-white dark:bg-slate-800/90 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm mb-12 overflow-x-auto max-w-full">
+          <button
+            onClick={() => setSelectedCategory("all")}
+            className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors whitespace-nowrap cursor-pointer ${
+              selectedCategory === "all"
+                ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-sm"
+                : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+            }`}
+          >
+            All Systems ({projects?.length || 8})
+          </button>
+          <button
+            onClick={() => setSelectedCategory("fullstack")}
+            className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors whitespace-nowrap cursor-pointer ${
+              selectedCategory === "fullstack"
+                ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-sm"
+                : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+            }`}
+          >
+            Full-Stack (React/TS/Express)
+          </button>
+          <button
+            onClick={() => setSelectedCategory("python")}
+            className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors whitespace-nowrap cursor-pointer ${
+              selectedCategory === "python"
+                ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-sm"
+                : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+            }`}
+          >
+            Python & Django
+          </button>
+          <button
+            onClick={() => setSelectedCategory("data")}
+            className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors whitespace-nowrap cursor-pointer ${
+              selectedCategory === "data"
+                ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-sm"
+                : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+            }`}
+          >
+            Power BI & Analytics
+          </button>
+          <button
+            onClick={() => setSelectedCategory("github")}
+            className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${
+              selectedCategory === "github"
+                ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-sm"
+                : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+            }`}
+          >
+            <Github className="w-3.5 h-3.5" />
+            <span>GitHub Repos</span>
+          </button>
         </div>
 
         {/* Loading State */}
@@ -101,6 +179,7 @@ export default function ProjectsSection() {
             const techStack = project.techStack ? (JSON.parse(project.techStack) as string[]) : [];
             const specifications = project.specifications ? (JSON.parse(project.specifications) as string[]) : [];
             const isFeaturedHero = index === 0 && selectedCategory === "all";
+            const repoSlug = getRepoName(project.repoUrl);
 
             return (
               <div
@@ -117,12 +196,32 @@ export default function ProjectsSection() {
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-transparent opacity-90" />
+
+                  {/* GitHub Repo Badge on Top Right */}
+                  {project.repoUrl && (
+                    <a
+                      href={project.repoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute top-3.5 right-3.5 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-950/80 backdrop-blur-md text-white text-xs font-mono border border-slate-700/80 hover:bg-slate-900 transition-colors z-10 shadow-sm"
+                      title={`View ${repoSlug} on GitHub`}
+                    >
+                      <Github className="w-3.5 h-3.5" />
+                      <span>{repoSlug}</span>
+                    </a>
+                  )}
 
                   {/* Title overlay on bottom of image for visual anchoring */}
                   <div className="absolute bottom-4 left-4 right-4 text-white">
-                    <div className="text-xs text-blue-300 font-semibold mb-1">
-                      {index === 0 ? "Flagship System" : `System 0${index + 1}`}
+                    <div className="text-xs text-blue-300 font-semibold mb-1 flex items-center gap-2">
+                      <span>{index === 0 ? "Flagship System" : `System 0${index + 1}`}</span>
+                      {project.demoUrl && (
+                        <span className="inline-flex items-center gap-1 text-[10px] text-emerald-300 bg-emerald-950/70 border border-emerald-700/60 px-1.5 py-0.5 rounded">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                          Live Demo
+                        </span>
+                      )}
                     </div>
                     <h3 className="text-xl md:text-2xl font-bold tracking-tight">
                       {project.title}
@@ -161,12 +260,12 @@ export default function ProjectsSection() {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-3">
+                  <div className="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2.5">
                     <Button
                       variant="outline"
                       size="sm"
                       onClick={() => setActiveModalProject(project)}
-                      className="rounded-xl text-xs font-semibold flex-1 gap-1.5 border-slate-200 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-500"
+                      className="rounded-xl text-xs font-semibold flex-1 gap-1.5 border-slate-200 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-500 cursor-pointer"
                     >
                       <span>System Specs</span>
                       <ChevronRight className="w-3.5 h-3.5" />
@@ -177,7 +276,7 @@ export default function ProjectsSection() {
                         <Button
                           asChild
                           size="sm"
-                          className="rounded-xl text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white gap-1 px-3"
+                          className="rounded-xl text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white gap-1 px-3 shadow-sm"
                         >
                           <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
                             <span>Demo</span>
@@ -188,12 +287,13 @@ export default function ProjectsSection() {
                       {project.repoUrl && (
                         <Button
                           asChild
-                          variant="ghost"
+                          variant="outline"
                           size="sm"
-                          className="rounded-xl text-xs px-2.5 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                          className="rounded-xl text-xs px-2.5 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border-slate-300 dark:border-slate-700"
                         >
-                          <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
-                            <Github className="w-4 h-4" />
+                          <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" title={`View ${repoSlug} on GitHub`}>
+                            <Github className="w-4 h-4 mr-1" />
+                            <span>Code</span>
                           </a>
                         </Button>
                       )}
@@ -214,9 +314,16 @@ export default function ProjectsSection() {
               <div className="p-6 md:p-10 space-y-8">
                 {/* Modal Header */}
                 <DialogHeader className="space-y-3">
-                  <div className="flex items-center gap-2 text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
-                    <Layers className="w-3.5 h-3.5" />
-                    <span>Technical Architecture & Breakdown</span>
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
+                      <Layers className="w-3.5 h-3.5" />
+                      <span>Technical Architecture & Breakdown</span>
+                    </div>
+                    {activeModalProject.repoUrl && (
+                      <span className="font-mono text-xs text-slate-500 dark:text-slate-400">
+                        {getRepoName(activeModalProject.repoUrl)}
+                      </span>
+                    )}
                   </div>
                   <DialogTitle className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">
                     {activeModalProject.title}
@@ -284,12 +391,25 @@ export default function ProjectsSection() {
                           <Button asChild variant="outline" className="w-full gap-2 rounded-xl text-xs font-semibold border-slate-300 dark:border-slate-700">
                             <a href={activeModalProject.repoUrl} target="_blank" rel="noopener noreferrer">
                               <Github className="w-3.5 h-3.5" />
-                              <span>View Source Code</span>
+                              <span>View Repository on GitHub</span>
                             </a>
                           </Button>
                         )}
                       </div>
                     </div>
+
+                    {/* Clone snippet */}
+                    {activeModalProject.repoUrl && (
+                      <div className="p-4 rounded-2xl bg-slate-900 text-slate-300 text-xs font-mono border border-slate-800 space-y-2">
+                        <div className="flex items-center gap-1.5 text-slate-400 text-[11px]">
+                          <Terminal className="w-3.5 h-3.5" />
+                          <span>Clone Repository</span>
+                        </div>
+                        <div className="bg-slate-950 p-2.5 rounded-lg select-all overflow-x-auto text-blue-400 border border-slate-800/80">
+                          git clone {activeModalProject.repoUrl}.git
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
 

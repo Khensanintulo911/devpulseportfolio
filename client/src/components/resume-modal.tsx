@@ -23,7 +23,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 Curriculum Vitae
               </span>
               <DialogTitle className="text-2xl md:text-3xl font-bold tracking-tight mt-1">
-                Khensani Daniel Ntulo
+                Khensani Ntulo
               </DialogTitle>
               <DialogDescription className="text-sm text-slate-600 dark:text-slate-400 mt-1">
                 Full-Stack Software Developer & Data Science Practitioner · IQbusiness Learnership · Mining Engineering Foundation

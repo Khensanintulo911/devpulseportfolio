@@ -106,7 +106,7 @@ export default function AboutSection() {
                   "I don’t just write code; I solve problems. Whether debugging a script, drafting a mechanical component, or helping a student pass a difficult module, my goal is always to find the most elegant solution to the challenge at hand."
                 </blockquote>
                 <div className="pt-4 border-t border-blue-500/80 text-xs text-blue-100 font-medium">
-                  — Khensani Daniel Ntulo
+                  — Khensani Ntulo
                 </div>
               </div>
 
