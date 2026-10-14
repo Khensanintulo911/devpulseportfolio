@@ -1,4 +1,14 @@
-import { type User, type InsertUser, type Profile, type InsertProfile, type UpdateProfile, type Project, type InsertProject } from "@shared/schema";
+import { 
+  type User, 
+  type InsertUser, 
+  type Profile, 
+  type InsertProfile, 
+  type UpdateProfile, 
+  type Project, 
+  type InsertProject,
+  type ContactMessage,
+  type InsertContactMessage 
+} from "@shared/schema";
 import { randomUUID } from "crypto";
 
 export interface IStorage {
@@ -10,16 +20,20 @@ export interface IStorage {
   updateProfile(profile: UpdateProfile): Promise<Profile | undefined>;
   getProjects(): Promise<Project[]>;
   createProject(project: InsertProject): Promise<Project>;
+  getMessages(): Promise<ContactMessage[]>;
+  createMessage(msg: InsertContactMessage): Promise<ContactMessage>;
 }
 
 export class MemStorage implements IStorage {
   private users: Map<string, User>;
   private projects: Map<string, Project>;
+  private messages: Map<string, ContactMessage>;
   private profile: Profile | undefined;
 
   constructor() {
     this.users = new Map();
     this.projects = new Map();
+    this.messages = new Map();
     
     // Initialize with default profile
     this.profile = {
@@ -290,6 +304,27 @@ export class MemStorage implements IStorage {
     };
     this.projects.set(id, project);
     return project;
+  }
+
+  async getMessages(): Promise<ContactMessage[]> {
+    return Array.from(this.messages.values()).sort(
+      (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+    );
+  }
+
+  async createMessage(insertMsg: InsertContactMessage): Promise<ContactMessage> {
+    const id = randomUUID();
+    const message: ContactMessage = {
+      id,
+      name: insertMsg.name,
+      email: insertMsg.email,
+      subject: insertMsg.subject || null,
+      message: insertMsg.message,
+      createdAt: new Date().toISOString(),
+      isRead: "false"
+    };
+    this.messages.set(id, message);
+    return message;
   }
 }
 
